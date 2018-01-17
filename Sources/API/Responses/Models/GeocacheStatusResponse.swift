@@ -1,6 +1,6 @@
 //
 //  GeocacheStatusResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 12/06/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -9,18 +9,18 @@
 import Foundation
 import ObjectMapper
 
-class GeocacheStatusResponse: Mappable {
-    var archived: Bool?
-    var available: Bool?
-    var cacheCode: String?
-    var cacheName: String?
-    var geocacheType: GeocacheType?
-    var premium: Bool?
-    var trackableCount: Int?
+public class GeocacheStatusResponse: Mappable {
+    public var archived: Bool?
+    public var available: Bool?
+    public var cacheCode: String?
+    public var cacheName: String?
+    public var geocacheType: GeocacheType?
+    public var premium: Bool?
+    public var trackableCount: Int?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         archived <- map["Archived"]
         available <- map["Available"]
         cacheCode <- map["CacheCode"]

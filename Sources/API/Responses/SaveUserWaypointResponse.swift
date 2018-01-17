@@ -1,6 +1,6 @@
 //
 //  SaveUserWaypointResponse.swift
-//  MysteryMergeiOS
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 16.01.18.
 //  Copyright © 2018 Patrick Steiner. All rights reserved.

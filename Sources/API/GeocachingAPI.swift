@@ -1,6 +1,6 @@
 //
 //  APIManager.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 10.08.16.
 //  Copyright © 2016 Patrick Steiner. All rights reserved.
@@ -12,9 +12,9 @@ import OAuthSwift
 import ObjectMapper
 import AlamofireObjectMapper
 
-class GeocachingAPI {
-    var oAuthSwiftManager: OAuth1Swift?
-    var loggedIn = false {
+public class GeocachingAPI {
+    private var oAuthSwiftManager: OAuth1Swift?
+    private var loggedIn = false {
         didSet {
             SettingsManager.isLoggedIn = loggedIn
         }
@@ -22,7 +22,7 @@ class GeocachingAPI {
 
     // MARK: Validation Handler
 
-    func apiStatusResponseHandler(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Request.ValidationResult {
+    public func apiStatusResponseHandler(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Request.ValidationResult {
         if response.statusCode != 200 {
 //            AnalyticsManager.logError(statusCode: response.statusCode, errorType: .httpStatusCode)
             return .failure(APIError.statusCodeError)
@@ -51,7 +51,7 @@ class GeocachingAPI {
 
     // MARK: OAuth
 
-    func signIn(_ viewController: UIViewController?, completion: @escaping (_ successful: Bool) -> Void) {
+    public func signIn(_ viewController: UIViewController?, completion: @escaping (_ successful: Bool) -> Void) {
         guard let apiConsumerKey = SettingsManager.apiConsumerKey,
               let apiConsumerSecrect = SettingsManager.apiConsumerSecret else {
                 completion(false)
@@ -84,7 +84,7 @@ class GeocachingAPI {
         })
     }
 
-    func logout() {
+    public func logout() {
         self.loggedIn = false
 
         handleBackgroudFetch()
@@ -120,7 +120,7 @@ class GeocachingAPI {
     /**
      Get the own profile.
      */
-    func getYourUserProfile(_ completion: ((_ successful: Bool, _ geocacher: ProfileResponse?, _ error: Error?) -> Void)? = nil) {
+    public func getYourUserProfile(_ completion: ((_ successful: Bool, _ geocacher: ProfileResponse?, _ error: Error?) -> Void)? = nil) {
         guard let token = SettingsManager.apiToken else {
             completion?(false, nil, APIError.noTokenError)
             return
@@ -155,7 +155,7 @@ class GeocachingAPI {
     /**
      Get cache counts for the given users.
      */
-    func getUsersCacheCounts(usernames: [String],
+    public func getUsersCacheCounts(usernames: [String],
                              completion: @escaping (_ successful: Bool, _ cacheCounts: [UserCacheCountsResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil, APIError.noTokenError)
@@ -185,7 +185,7 @@ class GeocachingAPI {
     /**
      Get another users profile.
      */
-    func getAnotherUsersProfile(userID: Int, completion: @escaping (_ successful: Bool, _ geocacher: ProfileResponse?, _ error: Error?) -> Void) {
+    public func getAnotherUsersProfile(userID: Int, completion: @escaping (_ successful: Bool, _ geocacher: ProfileResponse?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil, APIError.noTokenError)
             return
@@ -211,7 +211,7 @@ class GeocachingAPI {
     /**
      Get users geocache logs.
      */
-    func getUsersGeocacheLogs(username: String,
+    public func getUsersGeocacheLogs(username: String,
                               startIndex: Int = 0,
                               maxPerPage: Int = 30,
                               completion: @escaping (_ successful: Bool, _ geocacheLogs: [GeocacheLogResponse]?, _ error: Error?) -> Void) {
@@ -243,7 +243,7 @@ class GeocachingAPI {
     /**
      Get users image gallery.
      */
-    func getUserGallery(username: String,
+    public func getUserGallery(username: String,
                         startIndex: Int = 0,
                         maxPerPage: Int = 30,
                         completion: @escaping (_ successful: Bool, _ images: [ImageResponse]?, _ error: Error?) -> Void) {
@@ -276,7 +276,7 @@ class GeocachingAPI {
     /**
      Get status of geocaches.
     */
-    func getGeocacheStatus(cacheCodes: [String], completion: @escaping (_ successful: Bool, _ statuses: [GeocacheStatusResponse]?) -> Void) {
+    public func getGeocacheStatus(cacheCodes: [String], completion: @escaping (_ successful: Bool, _ statuses: [GeocacheStatusResponse]?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil)
             return
@@ -301,7 +301,7 @@ class GeocachingAPI {
     /**
      Get API limits.
     */
-    func getAPILimits(completion: @escaping (_ successful: Bool, _ apiLimits: GetAPILimitsResponse?, _ error: Error?) -> Void) {
+    public func getAPILimits(completion: @escaping (_ successful: Bool, _ apiLimits: GetAPILimitsResponse?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil, nil)
             return
@@ -326,7 +326,7 @@ class GeocachingAPI {
     /**
      Get geocache types.
      */
-    func getGeocacheTypes(completion: @escaping (_ successful: Bool, _ geocacheTypes: [GeocacheTypesResponse]?, _ error: Error?) -> Void) {
+    public func getGeocacheTypes(completion: @escaping (_ successful: Bool, _ geocacheTypes: [GeocacheTypesResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil, nil)
             return
@@ -351,7 +351,7 @@ class GeocachingAPI {
     /**
      Save user waypoint.
      */
-    func saveWaypoint(cacheCode: String, latitude: Double, longitude: Double, correctedCoordinate: Bool, completion: @escaping (_ successful: Bool) -> Void) {
+    public func saveWaypoint(cacheCode: String, latitude: Double, longitude: Double, correctedCoordinate: Bool, completion: @escaping (_ successful: Bool) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false)
             return

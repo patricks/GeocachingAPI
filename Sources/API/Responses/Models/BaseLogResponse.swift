@@ -1,6 +1,6 @@
 //
 //  BaseLogResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 23/04/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -9,27 +9,27 @@
 import Foundation
 import ObjectMapper
 
-class BaseLogResponse: Mappable {
-    var cannotDelete: Bool?
-    var code: String?
-    var guid: String?
-    var identifier: Int?
-    var images: [ImageResponse]?
-    var isArchived: Bool?
-    var logIsEncoded: Bool?
-    var logText: String?
-    var logType: LogTypeResponse?
-    var utcCreateDate: Date?
-    var updatedLatitude: Float?
-    var updatedLongitude: Float?
-    var url: String?
-    var visitDate: Date?
-    var visitDateIso: Date?
-    var ianaTimezoneId: String?
+public class BaseLogResponse: Mappable {
+    public var cannotDelete: Bool?
+    public var code: String?
+    public var guid: String?
+    public var identifier: Int?
+    public var images: [ImageResponse]?
+    public var isArchived: Bool?
+    public var logIsEncoded: Bool?
+    public var logText: String?
+    public var logType: LogTypeResponse?
+    public var utcCreateDate: Date?
+    public var updatedLatitude: Float?
+    public var updatedLongitude: Float?
+    public var url: String?
+    public var visitDate: Date?
+    public var visitDateIso: Date?
+    public var ianaTimezoneId: String?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         cannotDelete <- map["CannotDelete"]
         code <- map["Code"]
         guid <- map["Guid"]

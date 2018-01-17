@@ -1,6 +1,6 @@
 //
 //  ImageResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 23/04/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -9,19 +9,19 @@
 import Foundation
 import ObjectMapper
 
-class ImageResponse: Mappable {
-    var dateCreated: Date?
-    var description: String?
-    var imageGuid: String?
-    var mobileURL: String?
-    var name: String?
-    var thumbUrl: String?
-    var url: String?
+public class ImageResponse: Mappable {
+    public var dateCreated: Date?
+    public var description: String?
+    public var imageGuid: String?
+    public var mobileURL: String?
+    public var name: String?
+    public var thumbUrl: String?
+    public var url: String?
 
-    init() { }
-    required init?(map: Map) { }
+    public init() { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         dateCreated <- (map["DateCreated"], DotNetJSONTransform())
         description <- map["Description"]
         imageGuid <- map["ImageGuid"]

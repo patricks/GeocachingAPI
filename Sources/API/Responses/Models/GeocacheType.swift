@@ -1,6 +1,6 @@
 //
 //  GeocacheType.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 12/06/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum GeocacheType: Int {
+public enum GeocacheType: Int {
     case traditional = 2
     case multi = 3
     case virtual = 4
@@ -29,15 +29,15 @@ enum GeocacheType: Int {
     case groundspeakBlockParty = 4738
     case gigaEvent = 7005
 
-    static var geocacheTypeIds: [Int] {
+    public static var geocacheTypeIds: [Int] {
         return [2, 3, 4, 5, 6, 8, 9, 11, 12, 13, 137, 453, 1304, 1858, 3653, 3773, 3774, 4738, 7005]
     }
 
-    var imageURL: String {
+    public var imageURL: String {
         return "https://www.geocaching.com/images/wpttypes/\(self.rawValue).gif"
     }
 
-    var localizedName: String {
+    public var localizedName: String {
         switch self {
         case .traditional:
             return NSLocalizedString("cache.type.traditional", comment: "Cache type: Traditional")

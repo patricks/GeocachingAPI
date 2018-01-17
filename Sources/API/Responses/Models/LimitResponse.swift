@@ -1,6 +1,6 @@
 //
 //  LimitResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 11.11.17.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -9,22 +9,22 @@
 import Foundation
 import ObjectMapper
 
-class LimitResponse: Mappable {
-    var cacheLimits: [CacheLimitResponse]?
-    var enforceCacheLimits: Bool?
-    var enforceLiteCacheLimits: Bool?
-    var enforceMethodLimits: Bool?
-    var forMembershipType: Int?
-    var licenseKey: String?
-    var liteCacheLimits: [CacheLimitResponse]?
-    var maxCallsbyIPIn1Minute: Int?
-    var methodLimits: [MethodLimitResponse]?
-    var restrictbyIP: Bool?
-    var validateIPCounts: Bool?
+public class LimitResponse: Mappable {
+    public var cacheLimits: [CacheLimitResponse]?
+    public var enforceCacheLimits: Bool?
+    public var enforceLiteCacheLimits: Bool?
+    public var enforceMethodLimits: Bool?
+    public var forMembershipType: Int?
+    public var licenseKey: String?
+    public var liteCacheLimits: [CacheLimitResponse]?
+    public var maxCallsbyIPIn1Minute: Int?
+    public var methodLimits: [MethodLimitResponse]?
+    public var restrictbyIP: Bool?
+    public var validateIPCounts: Bool?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         cacheLimits <- map["CacheLimits"]
         enforceCacheLimits <- map["EnforceCacheLimits"]
         enforceLiteCacheLimits <- map["EnforceLiteCacheLimits"]
@@ -39,27 +39,27 @@ class LimitResponse: Mappable {
     }
 }
 
-class CacheLimitResponse: Mappable {
-    var cacheLimit: Int?
-    var inMinutes: Int?
+public class CacheLimitResponse: Mappable {
+    public var cacheLimit: Int?
+    public var inMinutes: Int?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         cacheLimit <- map["CacheLimit"]
         inMinutes <- map["InMinutes"]
     }
 }
 
-class MethodLimitResponse: Mappable {
-    var inMinutes: Int?
-    var maxCalls: Int?
-    var methodName: String?
-    var partnerMethod: Bool?
+public class MethodLimitResponse: Mappable {
+    public var inMinutes: Int?
+    public var maxCalls: Int?
+    public var methodName: String?
+    public var partnerMethod: Bool?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         inMinutes <- map["InMinutes"]
         maxCalls <- map["MaxCalls"]
         methodName <- map["MethodName"]

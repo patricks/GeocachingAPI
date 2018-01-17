@@ -1,6 +1,6 @@
 //
 //  StatusResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 14.08.16.
 //  Copyright © 2016 Patrick Steiner. All rights reserved.
@@ -9,14 +9,14 @@
 import Foundation
 import ObjectMapper
 
-class StatusResponse: Mappable {
-    var statusCode: Int?
-    var statusMessage: String?
-    var exceptionDetails: String?
+public class StatusResponse: Mappable {
+    public var statusCode: Int?
+    public var statusMessage: String?
+    public var exceptionDetails: String?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         statusCode <- map["StatusCode"]
         statusMessage <- map["StatusMessage"]
         exceptionDetails <- map["ExceptionDetails"]

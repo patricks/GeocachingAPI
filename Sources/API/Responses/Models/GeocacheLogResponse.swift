@@ -1,6 +1,6 @@
 //
 //  LogResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 23/04/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -9,12 +9,12 @@
 import Foundation
 import ObjectMapper
 
-class GeocacheLogResponse: BaseLogResponse {
-    var cacheCode: String?
-    var isApproved: Bool?
-    var finder: UserResponse?
+public class GeocacheLogResponse: BaseLogResponse {
+    public var cacheCode: String?
+    public var isApproved: Bool?
+    public var finder: UserResponse?
 
-    override func mapping(map: Map) {
+    public override func mapping(map: Map) {
         super.mapping(map: map)
 
         cacheCode <- map["CacheCode"]

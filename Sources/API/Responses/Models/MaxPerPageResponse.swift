@@ -1,6 +1,6 @@
 //
 //  MaxPerPageResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 11.11.17.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -9,17 +9,17 @@
 import Foundation
 import ObjectMapper
 
-class MaxPerPageResponse: Mappable {
-    var geocaches: Int?
-    var geocacheLogs: Int?
-    var trackables: Int?
-    var trackableLogs: Int?
-    var cacheNotes: Int?
-    var galleryImages: Int?
+public class MaxPerPageResponse: Mappable {
+    public var geocaches: Int?
+    public var geocacheLogs: Int?
+    public var trackables: Int?
+    public var trackableLogs: Int?
+    public var cacheNotes: Int?
+    public var galleryImages: Int?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         geocaches <- map["Geocaches"]
         geocacheLogs <- map["GeocacheLogs"]
         trackables <- map["Trackables"]

@@ -1,6 +1,6 @@
 //
 //  APIError.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 05/07/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.

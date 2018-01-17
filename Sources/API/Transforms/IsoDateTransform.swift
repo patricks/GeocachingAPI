@@ -1,6 +1,6 @@
 //
 //  IsoDateTransform.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 06/07/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.

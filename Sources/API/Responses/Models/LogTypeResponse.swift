@@ -1,6 +1,6 @@
 //
 //  LogTypeResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 23/04/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -9,8 +9,8 @@
 import Foundation
 import ObjectMapper
 
-class LogTypeResponse: Mappable {
-    enum LogType: Int {
+public class LogTypeResponse: Mappable {
+    public enum LogType: Int {
         case unarchiveA = 1 // Dont know why there are 2 unarchive types
         case foundIt = 2
         case didntFindIt = 3
@@ -43,15 +43,15 @@ class LogTypeResponse: Mappable {
         case visited = 75
         case submitForReview = 76
 
-        static var geocacheLogTypeIds: [Int] {
+        public static var geocacheLogTypeIds: [Int] {
             return [2, 3, 4, 5, 7, 11, 22, 23, 45, 46, 47]
         }
 
-        static var eventLogTypeIds: [Int] {
+        public static var eventLogTypeIds: [Int] {
             return [4, 9, 10, 74]
         }
 
-        var localizedName: String {
+        public var localizedName: String {
             switch self {
             case .unarchiveA, .unarchive:
                 return NSLocalizedString("log.type.unarchive", comment: "Log type: Unarchive")
@@ -114,7 +114,7 @@ class LogTypeResponse: Mappable {
             }
         }
 
-        var imageURL: String {
+        public var imageURL: String {
             switch self {
             case .unarchiveA, .unarchive:
                 return urlStringForImage(name: "12")
@@ -179,16 +179,17 @@ class LogTypeResponse: Mappable {
             return "https://www.geocaching.com/images/logtypes/\(name).png"
         }
     }
-    var adminActionable: Bool?
-    var imageName: String?
-    var imageURL: String?
-    var ownerActionable: Bool?
-    var wptLogType: LogType?
-    var wptLogTypeName: String?
 
-    required init?(map: Map) { }
+    public var adminActionable: Bool?
+    public var imageName: String?
+    public var imageURL: String?
+    public var ownerActionable: Bool?
+    public var wptLogType: LogType?
+    public var wptLogTypeName: String?
 
-    func mapping(map: Map) {
+    public required init?(map: Map) { }
+
+    public func mapping(map: Map) {
         adminActionable <- map["AdminActionable"]
         imageName <- map["ImageName"]
         imageURL <- map["ImageURL"]

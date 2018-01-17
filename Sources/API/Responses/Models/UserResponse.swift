@@ -1,6 +1,6 @@
 //
 //  UserResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 23/04/2017.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
@@ -9,21 +9,21 @@
 import Foundation
 import ObjectMapper
 
-class UserResponse: Mappable {
-    var avatarUrl: String?
-    var findCount: Int?
-    var galleryImageCount: Int?
-    var hideCount: Int?
-    var homeCoordinates: HomeCoordinatesResponse?
-    var identifier: Int?
-    var isAdmin: Bool?
-    var memberType: MemberTypeResponse?
-    var publicGuid: String?
-    var username: String?
+public class UserResponse: Mappable {
+    public var avatarUrl: String?
+    public var findCount: Int?
+    public var galleryImageCount: Int?
+    public var hideCount: Int?
+    public var homeCoordinates: HomeCoordinatesResponse?
+    public var identifier: Int?
+    public var isAdmin: Bool?
+    public var memberType: MemberTypeResponse?
+    public var publicGuid: String?
+    public var username: String?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         avatarUrl <- map["AvatarUrl"]
         findCount <- map["FindCount"]
         galleryImageCount <- map["GalleryImageCount"]
@@ -37,25 +37,25 @@ class UserResponse: Mappable {
     }
 }
 
-class HomeCoordinatesResponse: Mappable {
-    var latitude: Float?
-    var longitude: Float?
+public class HomeCoordinatesResponse: Mappable {
+    public var latitude: Double?
+    public var longitude: Double?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         latitude <- map["Latitude"]
         longitude <- map["Longitude"]
     }
 }
 
-class MemberTypeResponse: Mappable {
-    var memberTypeId: Int?
-    var memberTypeName: String?
+public class MemberTypeResponse: Mappable {
+    public var memberTypeId: Int?
+    public var memberTypeName: String?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         memberTypeId <- map["MemberTypeId"]
         memberTypeName <- map["MemberTypeName"]
     }

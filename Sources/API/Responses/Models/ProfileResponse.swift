@@ -1,6 +1,6 @@
 //
 //  ProfileResponse.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 14.08.16.
 //  Copyright © 2016 Patrick Steiner. All rights reserved.
@@ -10,19 +10,19 @@ import Foundation
 import ObjectMapper
 import AFDateHelper
 
-class ProfileResponse: Mappable {
-    var favoritePoints: FavoritePointsResponse?
-    var geocaches: GeocachesResponse?
-    var publicProfile: PublicProfileResponse?
-    var souvenirs: [SouvenirsReponse]?
-    var stats: StatsReponse?
-    var trackables: TrackablesReponse?
-    var user: UserResponse?
-    var emailData: EmailDataResponse?
+public class ProfileResponse: Mappable {
+    public var favoritePoints: FavoritePointsResponse?
+    public var geocaches: GeocachesResponse?
+    public var publicProfile: PublicProfileResponse?
+    public var souvenirs: [SouvenirsReponse]?
+    public var stats: StatsReponse?
+    public var trackables: TrackablesReponse?
+    public var user: UserResponse?
+    public var emailData: EmailDataResponse?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         favoritePoints <- map["FavoritePoints"]
         geocaches <- map["Geocaches"]
         publicProfile <- map["PublicProfile"]
@@ -38,16 +38,16 @@ class ProfileResponse: Mappable {
 
 // MARK: Favorite Points
 
-class FavoritePointsResponse: Mappable {
-    var accountID: Int?
-    var percentCompleteTowardsNextPoint: Int?
-    var pointsAvailable: Int?
-    var totalPoints: Int?
-    var totalUntilNextPoint: Int?
+public class FavoritePointsResponse: Mappable {
+    public var accountID: Int?
+    public var percentCompleteTowardsNextPoint: Int?
+    public var pointsAvailable: Int?
+    public var totalPoints: Int?
+    public var totalUntilNextPoint: Int?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         accountID <- map["AccountID"]
         percentCompleteTowardsNextPoint <- map["PercentCompleteTowardsNextPoint"]
         pointsAvailable <- map["PointsAvailable"]
@@ -58,16 +58,16 @@ class FavoritePointsResponse: Mappable {
 
 // MARK: Geocaches
 
-class GeocachesResponse: Mappable {
-    var benchmarkFindTypes: [GeocacheTypesResponse]?
-    var geocacheFindCount: Int?
-    var geocacheFindTypes: [GeocacheTypesResponse]?
-    var geocacheHideCount: Int?
-    var geocacheHideTypes: [GeocacheTypesResponse]?
+public class GeocachesResponse: Mappable {
+    public var benchmarkFindTypes: [GeocacheTypesResponse]?
+    public var geocacheFindCount: Int?
+    public var geocacheFindTypes: [GeocacheTypesResponse]?
+    public var geocacheHideCount: Int?
+    public var geocacheHideTypes: [GeocacheTypesResponse]?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         benchmarkFindTypes <- map["BenchmarkFindTypes"]
         geocacheFindCount <- map["GeocacheFindCount"]
         geocacheFindTypes <- map["GeocacheFindTypes"]
@@ -76,19 +76,19 @@ class GeocachesResponse: Mappable {
     }
 }
 
-class GeocacheTypesResponse: Mappable {
-    var description: String?
-    var geocacheType: GeocacheType? // GeocacheTypeId
-    var geocacheTypeName: String?
-    var imageURL: String?
-    var isContainer: Bool?
-    var isGrandfathered: Bool?
-    var parentTypeId: Int?
-    var userCount: Int?
+public class GeocacheTypesResponse: Mappable {
+    public var description: String?
+    public var geocacheType: GeocacheType? // GeocacheTypeId
+    public var geocacheTypeName: String?
+    public var imageURL: String?
+    public var isContainer: Bool?
+    public var isGrandfathered: Bool?
+    public var parentTypeId: Int?
+    public var userCount: Int?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         description <- map["Description"]
         geocacheType <- (map["GeocacheTypeId"], EnumTransform<GeocacheType>())
         geocacheTypeName <- map["GeocacheTypeName"]
@@ -102,18 +102,18 @@ class GeocacheTypesResponse: Mappable {
 
 // MARK: Public Profile
 
-class PublicProfileResponse: Mappable {
-    var forumTitle: String?
-    var lastVisit: Date?
-    var location: String?
-    var memberSince: Date?
-    var occupation: String?
-    var profilePhoto: ProfilePhotoResponse?
-    var profileText: String?
+public class PublicProfileResponse: Mappable {
+    public var forumTitle: String?
+    public var lastVisit: Date?
+    public var location: String?
+    public var memberSince: Date?
+    public var occupation: String?
+    public var profilePhoto: ProfilePhotoResponse?
+    public var profileText: String?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         forumTitle <- map["ForumTitle"]
         lastVisit <- (map["LastVisit"], DotNetJSONTransform())
         location <- map["Location"]
@@ -124,15 +124,15 @@ class PublicProfileResponse: Mappable {
     }
 }
 
-class ProfilePhotoResponse: Mappable {
-    var photoDescription: String?
-    var photoFilename: String?
-    var photoName: String?
-    var photoURL: String?
+public class ProfilePhotoResponse: Mappable {
+    public var photoDescription: String?
+    public var photoFilename: String?
+    public var photoName: String?
+    public var photoURL: String?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         photoDescription <- map["PhotoDescription"]
         photoFilename <- map["PhotoFilename"]
         photoName <- map["PhotoName"]
@@ -142,43 +142,43 @@ class ProfilePhotoResponse: Mappable {
 
 // MARK: Souvenirs
 
-class SouvenirsReponse: Mappable {
-    var aboutTheArtist: String?
-    var artistName: String?
-    var artistURL: String?
-    var cacheID: Int?
-    var coordinates: String?
-    var countryID: Int?
-    var creatorGUID: String?
-    var creatorID: Int?
-    var creatorName: String?
-    var creatorURL: String?
-    var dateDiscovered: Date?
-    var dateRangeEnd: Date?
-    var dateRangeStart: Date?
-    var difficulty: Float?
-    var favoritePoints: Int?
-    var feedback: String?
-    var hidden: Bool?
-    var howFound: Int?
-    var ignoreLocation: Bool?
-    var imagePath: String?
-    var information: String?
-    var isActive: Bool?
-    var isApproved: Int?
-    var luaPath: String?
-    var souvenirGuid: String?
-    var souvenirID: Int?
-    var souvenirType: Int?
-    var stateID: Int?
-    var terrain: Float?
-    var thumbPath: String?
-    var title: String?
-    var totalAwarded: Int?
+public class SouvenirsReponse: Mappable {
+    public var aboutTheArtist: String?
+    public var artistName: String?
+    public var artistURL: String?
+    public var cacheID: Int?
+    public var coordinates: String?
+    public var countryID: Int?
+    public var creatorGUID: String?
+    public var creatorID: Int?
+    public var creatorName: String?
+    public var creatorURL: String?
+    public var dateDiscovered: Date?
+    public var dateRangeEnd: Date?
+    public var dateRangeStart: Date?
+    public var difficulty: Double?
+    public var favoritePoints: Int?
+    public var feedback: String?
+    public var hidden: Bool?
+    public var howFound: Int?
+    public var ignoreLocation: Bool?
+    public var imagePath: String?
+    public var information: String?
+    public var isActive: Bool?
+    public var isApproved: Int?
+    public var luaPath: String?
+    public var souvenirGuid: String?
+    public var souvenirID: Int?
+    public var souvenirType: Int?
+    public var stateID: Int?
+    public var terrain: Double?
+    public var thumbPath: String?
+    public var title: String?
+    public var totalAwarded: Int?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         aboutTheArtist <- map["AboutTheArtist"]
         artistName <- map["ArtistName"]
         artistURL <- map["ArtistURL"]
@@ -216,15 +216,15 @@ class SouvenirsReponse: Mappable {
 
 // MARK: Stats
 
-class StatsReponse: Mappable {
-    var accountsLogged: Int?
-    var activeCaches: Int?
-    var activeCountries: Int?
-    var newLogs: Int?
+public class StatsReponse: Mappable {
+    public var accountsLogged: Int?
+    public var activeCaches: Int?
+    public var activeCountries: Int?
+    public var newLogs: Int?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         accountsLogged <- map["AccountsLogged"]
         activeCaches <- map["ActiveCaches"]
         activeCountries <- map["ActiveCountries"]
@@ -234,15 +234,15 @@ class StatsReponse: Mappable {
 
 // MARK: Trackables
 
-class TrackablesReponse: Mappable {
-    var trackableFindCount: Int?
-    var trackableFindTypes: [TrackableTypesReponse]?
-    var trackableOwnedCount: Int?
-    var trackableOwnedTypes: [TrackableTypesReponse]?
+public class TrackablesReponse: Mappable {
+    public var trackableFindCount: Int?
+    public var trackableFindTypes: [TrackableTypesReponse]?
+    public var trackableOwnedCount: Int?
+    public var trackableOwnedTypes: [TrackableTypesReponse]?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         trackableFindCount <- map["TrackableFindCount"]
         trackableFindTypes <- map["TrackableFindTypes"]
         trackableOwnedCount <- map["TrackableOwnedCount"]
@@ -250,40 +250,40 @@ class TrackablesReponse: Mappable {
     }
 }
 
-class TrackableTypesReponse: Mappable {
-    var allowedToBeCollected: Bool?
-    var archived: Bool?
-    var bugTypeID: Int?
-    var code: String?
-    var currentGeocacheCode: String?
-    var currentGoal: String?
-    var currentOwner: UserResponse?
-    var dateCreated: Date?
-    var description: String?
-    var iconUrl: String?
-    var identifier: Int?
-    var images: [ImageResponse]?
-    var inCollection: Bool?
-    var name: String?
-    var originalOwner: UserResponse?
-    var tBTypeName: String?
-    var tBTypeNameSingular: String?
-    var trackableLogs: [TrackableLogsResponse]?
-    var trackingCode: String?
-    var url: String?
-    var userCount: Int?
-    var wptTypeID: Int?
+public class TrackableTypesReponse: Mappable {
+    public var allowedToBeCollected: Bool?
+    public var archived: Bool?
+    public var bugTypeID: Int?
+    public var code: String?
+    public var currentGeocacheCode: String?
+    public var currentGoal: String?
+    public var currentOwner: UserResponse?
+    public var dateCreated: Date?
+    public var description: String?
+    public var iconUrl: String?
+    public var identifier: Int?
+    public var images: [ImageResponse]?
+    public var inCollection: Bool?
+    public var name: String?
+    public var originalOwner: UserResponse?
+    public var tBTypeName: String?
+    public var tBTypeNameSingular: String?
+    public var trackableLogs: [TrackableLogsResponse]?
+    public var trackingCode: String?
+    public var url: String?
+    public var userCount: Int?
+    public var wptTypeID: Int?
 
     // geocaching.com returns a http url, but also delivers icons via https
-    var iconUrlHTTPS: String? {
+    public var iconUrlHTTPS: String? {
         guard let iconURLString = iconUrl else { return nil }
 
         return iconURLString.replacingOccurrences(of: "http", with: "https")
     }
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         allowedToBeCollected <- map["AllowedToBeCollected"]
         archived <- map["Archived"]
         bugTypeID <- map["BugTypeID"]
@@ -309,12 +309,12 @@ class TrackableTypesReponse: Mappable {
     }
 }
 
-class TrackableLogsResponse: BaseLogResponse {
-    var cacheID: Int?
-    var logGuid: String?
-    var loggedBy: UserResponse?
+public class TrackableLogsResponse: BaseLogResponse {
+    public var cacheID: Int?
+    public var logGuid: String?
+    public var loggedBy: UserResponse?
 
-    override func mapping(map: Map) {
+    public override func mapping(map: Map) {
         super.mapping(map: map)
 
         cacheID <- map["CacheID"]
@@ -325,12 +325,12 @@ class TrackableLogsResponse: BaseLogResponse {
 
 // MARK: Email Data
 
-class EmailDataResponse: Mappable {
-    var isValidated: Bool?
+public class EmailDataResponse: Mappable {
+    public var isValidated: Bool?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         isValidated <- map["IsValidated"]
     }
 }

@@ -1,6 +1,6 @@
 //
 //  SettingsManager.swift
-//  Hamster
+//  GeocachingAPI
 //
 //  Created by Patrick Steiner on 04.08.16.
 //  Copyright © 2016 Patrick. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SettingsManager {
+public class SettingsManager {
     // Settings Keys
     private static let apiTokenKey = "apiToken"
     private static let usernameKey = "username"
@@ -18,7 +18,7 @@ class SettingsManager {
 
     // MARK: API
 
-    static var apiToken: String? {
+    public static var apiToken: String? {
         get {
             return UserDefaults.standard.string(forKey: apiTokenKey)
         }
@@ -28,7 +28,7 @@ class SettingsManager {
         }
     }
 
-    static var username: String? {
+    public static var username: String? {
         get {
             return UserDefaults.standard.string(forKey: usernameKey)
         }
@@ -38,7 +38,7 @@ class SettingsManager {
         }
     }
 
-    static var isLoggedIn: Bool {
+    public static var isLoggedIn: Bool {
         get {
             return UserDefaults.standard.bool(forKey: loggedInKey)
         }
@@ -54,7 +54,7 @@ class SettingsManager {
         }
     }
 
-    static var apiConsumerKey: String? {
+    public static var apiConsumerKey: String? {
         get {
             return UserDefaults.standard.string(forKey: apiConsumerKeyKey)
         }
@@ -64,7 +64,7 @@ class SettingsManager {
         }
     }
 
-    static var apiConsumerSecret: String? {
+    public static var apiConsumerSecret: String? {
         get {
             return UserDefaults.standard.string(forKey: apiConsumerSecretKey)
         }
