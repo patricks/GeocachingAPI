@@ -1,2 +1,2 @@
 # GeocachingAPI
-Geocaching API for Swift
+A Swift framework for the Geocaching API.

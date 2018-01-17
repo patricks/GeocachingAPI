@@ -57,11 +57,11 @@ public class GeocachingAPI {
         OAuthSwift.handle(url: url)
     }
 
-    public func signIn(_ viewController: UIViewController?, completion: @escaping (_ successful: Bool) -> Void) {
+    public func signIn(_ viewController: UIViewController?, completion: @escaping (_ successful: Bool, _ error: Error?) -> Void) {
         guard let apiConsumerKey = SettingsManager.apiConsumerKey,
               let apiConsumerSecrect = SettingsManager.apiConsumerSecret,
               let urlScheme = SettingsManager.urlScheme else {
-                completion(false)
+                completion(false, nil)
                 return
         }
 
@@ -83,11 +83,10 @@ public class GeocachingAPI {
                                      success: { (credential, _, _) in
                                         self.storeUser(apiToken: credential.oauthToken)
                                         self.handleBackgroudFetch()
-                                        completion(true)
+                                        completion(true, nil)
         }, failure: { error in
-//            log.error(error.localizedDescription)
 //            AnalyticsManager.logLogin(successful: false)
-            completion(false)
+            completion(false, error)
         })
     }
 
@@ -102,15 +101,15 @@ public class GeocachingAPI {
         self.loggedIn = true
 
         getYourUserProfile { (successful, profileResponse, _) in
-//            if successful {
-//                if let username = profileResponse?.user?.username {
-////                    AnalyticsManager.logLogin(successful: true, username: username)
-//                } else {
-////                    AnalyticsManager.logLogin(successful: true)
-//                }
-//            } else {
-////                AnalyticsManager.logLogin(successful: true)
-//            }
+            if successful {
+                if let username = profileResponse?.user?.username {
+//                    AnalyticsManager.logLogin(successful: true, username: username)
+                } else {
+//                    AnalyticsManager.logLogin(successful: true)
+                }
+            } else {
+//                AnalyticsManager.logLogin(successful: true)
+            }
         }
     }
 
@@ -146,7 +145,6 @@ public class GeocachingAPI {
                         completion?(true, profile, nil)
                     }
                 case .failure(let error):
-//                    log.error(error.localizedDescription)
                     completion?(false, nil, error)
                 }
         }
@@ -163,7 +161,7 @@ public class GeocachingAPI {
      Get cache counts for the given users.
      */
     public func getUsersCacheCounts(usernames: [String],
-                             completion: @escaping (_ successful: Bool, _ cacheCounts: [UserCacheCountsResponse]?, _ error: Error?) -> Void) {
+                                    completion: @escaping (_ successful: Bool, _ cacheCounts: [UserCacheCountsResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil, APIError.noTokenError)
             return
@@ -183,7 +181,6 @@ public class GeocachingAPI {
                         completion(true, nil, nil)
                     }
                 case .failure(let error):
-//                    log.error(error.localizedDescription)
                     completion(false, nil, error)
                 }
         }
@@ -209,7 +206,6 @@ public class GeocachingAPI {
                         completion(true, profile, nil)
                     }
                 case .failure(let error):
-//                    log.error(error.localizedDescription)
                     completion(false, nil, error)
                 }
         }
@@ -219,9 +215,9 @@ public class GeocachingAPI {
      Get users geocache logs.
      */
     public func getUsersGeocacheLogs(username: String,
-                              startIndex: Int = 0,
-                              maxPerPage: Int = 30,
-                              completion: @escaping (_ successful: Bool, _ geocacheLogs: [GeocacheLogResponse]?, _ error: Error?) -> Void) {
+                                     startIndex: Int = 0,
+                                     maxPerPage: Int = 30,
+                                     completion: @escaping (_ successful: Bool, _ geocacheLogs: [GeocacheLogResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil, APIError.noTokenError)
             return
@@ -241,7 +237,6 @@ public class GeocachingAPI {
                         completion(true, logs, nil)
                     }
                 case .failure(let error):
-//                    log.error(error.localizedDescription)
                     completion(false, nil, error)
                 }
         }
@@ -251,9 +246,9 @@ public class GeocachingAPI {
      Get users image gallery.
      */
     public func getUserGallery(username: String,
-                        startIndex: Int = 0,
-                        maxPerPage: Int = 30,
-                        completion: @escaping (_ successful: Bool, _ images: [ImageResponse]?, _ error: Error?) -> Void) {
+                               startIndex: Int = 0,
+                               maxPerPage: Int = 30,
+                               completion: @escaping (_ successful: Bool, _ images: [ImageResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil, APIError.noTokenError)
             return
@@ -274,7 +269,6 @@ public class GeocachingAPI {
                         completion(true, images, nil)
                     }
                 case .failure(let error):
-//                    log.error(error.localizedDescription)
                     completion(false, nil, error)
                 }
         }
@@ -283,9 +277,9 @@ public class GeocachingAPI {
     /**
      Get status of geocaches.
     */
-    public func getGeocacheStatus(cacheCodes: [String], completion: @escaping (_ successful: Bool, _ statuses: [GeocacheStatusResponse]?) -> Void) {
+    public func getGeocacheStatus(cacheCodes: [String], completion: @escaping (_ successful: Bool, _ statuses: [GeocacheStatusResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
-            completion(false, nil)
+            completion(false, nil, nil)
             return
         }
 
@@ -296,11 +290,9 @@ public class GeocachingAPI {
             .responseObject { (response: DataResponse<GetGeocacheStatusResponse>) in
                 switch response.result {
                 case .success(let value):
-                    completion(true, value.geocacheStatuses)
+                    completion(true, value.geocacheStatuses, nil)
                 case .failure(let error):
-                    print(error.localizedDescription)
-//                    log.error(error.localizedDescription)
-                    completion(false, nil)
+                    completion(false, nil, error)
                 }
         }
     }
@@ -324,7 +316,6 @@ public class GeocachingAPI {
                     completion(true, value, nil)
 
                 case .failure(let error):
-//                    log.error(error.localizedDescription)
                     completion(false, nil, error)
                 }
         }
@@ -349,7 +340,6 @@ public class GeocachingAPI {
                     completion(true, value.geocacheTypes, nil)
 
                 case .failure(let error):
-//                    log.error(error.localizedDescription)
                     completion(false, nil, error)
                 }
         }
@@ -358,9 +348,9 @@ public class GeocachingAPI {
     /**
      Save user waypoint.
      */
-    public func saveWaypoint(cacheCode: String, latitude: Double, longitude: Double, correctedCoordinate: Bool, completion: @escaping (_ successful: Bool) -> Void) {
+    public func saveWaypoint(cacheCode: String, latitude: Double, longitude: Double, correctedCoordinate: Bool, completion: @escaping (_ successful: Bool, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
-            completion(false)
+            completion(false, nil)
             return
         }
 
@@ -375,11 +365,9 @@ public class GeocachingAPI {
             .responseObject { (response: DataResponse<SaveUserWaypointResponse>) in
                 switch response.result {
                 case .success(_):
-                    completion(true)
+                    completion(true, nil)
                 case .failure(let error):
-                    print(error.localizedDescription)
-//                    log.error(error.localizedDescription)
-                    completion(false)
+                    completion(false, error)
                 }
         }
     }

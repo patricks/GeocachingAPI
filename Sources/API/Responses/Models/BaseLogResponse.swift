@@ -20,8 +20,8 @@ public class BaseLogResponse: Mappable {
     public var logText: String?
     public var logType: LogTypeResponse?
     public var utcCreateDate: Date?
-    public var updatedLatitude: Float?
-    public var updatedLongitude: Float?
+    public var updatedLatitude: Double?
+    public var updatedLongitude: Double?
     public var url: String?
     public var visitDate: Date?
     public var visitDateIso: Date?

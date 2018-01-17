@@ -20,4 +20,3 @@ class SaveUserWaypointResponse: Mappable {
         waypoint <- map["NewWaypoint"]
     }
 }
-
