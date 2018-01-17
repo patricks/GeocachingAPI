@@ -20,6 +20,8 @@ public class GeocachingAPI {
         }
     }
 
+    public init() {}
+
     // MARK: Validation Handler
 
     public func apiStatusResponseHandler(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Request.ValidationResult {
