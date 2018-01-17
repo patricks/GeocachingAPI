@@ -15,6 +15,7 @@ public class SettingsManager {
     private static let loggedInKey = "loggedIn"
     private static let apiConsumerKeyKey = "apiConsumerKey"
     private static let apiConsumerSecretKey = "apiCosumerSecret"
+    private static let urlSchemeKey = "urlScheme"
 
     // MARK: API
 
@@ -71,6 +72,16 @@ public class SettingsManager {
 
         set {
             UserDefaults.standard.set(newValue, forKey: apiConsumerSecretKey)
+        }
+    }
+
+    public static var urlScheme: String? {
+        get {
+            return UserDefaults.standard.string(forKey: urlSchemeKey)
+        }
+
+        set {
+            UserDefaults.standard.set(newValue, forKey: urlSchemeKey)
         }
     }
 }

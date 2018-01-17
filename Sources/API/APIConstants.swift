@@ -33,6 +33,5 @@ public struct APIConstants {
     public static let apiBaseURLPath = "/LiveV6/geocaching.svc/"
 
     // MARK: URL Scheme
-    public static let urlScheme = "mysterymerge" // TODO: find a more generic name
     public static let oAuthHost = "oauth-callback"
 }

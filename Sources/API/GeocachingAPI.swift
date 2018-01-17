@@ -53,9 +53,14 @@ public class GeocachingAPI {
 
     // MARK: OAuth
 
+    public static func handle(url: URL) {
+        OAuthSwift.handle(url: url)
+    }
+
     public func signIn(_ viewController: UIViewController?, completion: @escaping (_ successful: Bool) -> Void) {
         guard let apiConsumerKey = SettingsManager.apiConsumerKey,
-              let apiConsumerSecrect = SettingsManager.apiConsumerSecret else {
+              let apiConsumerSecrect = SettingsManager.apiConsumerSecret,
+              let urlScheme = SettingsManager.urlScheme else {
                 completion(false)
                 return
         }
@@ -74,7 +79,7 @@ public class GeocachingAPI {
 
 //        AnalyticsManager.logView(withName: .login)
 
-        oAuthSwiftManager!.authorize(withCallbackURL: URL(string: "\(APIConstants.urlScheme)://\(APIConstants.oAuthHost)/geocaching")!,
+        oAuthSwiftManager!.authorize(withCallbackURL: URL(string: "\(urlScheme)://\(APIConstants.oAuthHost)/geocaching")!,
                                      success: { (credential, _, _) in
                                         self.storeUser(apiToken: credential.oauthToken)
                                         self.handleBackgroudFetch()
