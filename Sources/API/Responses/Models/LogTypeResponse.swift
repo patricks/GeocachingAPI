@@ -171,21 +171,6 @@ class LogTypeResponse: Mappable {
             }
         }
 
-        var color: UIColor {
-            switch self {
-            case .foundIt:
-                return AppDesign.green
-            case .didntFindIt:
-                return AppDesign.blue
-            case .writeNote:
-                return AppDesign.gray
-            case .willAttend, .attended, .webcamPhotoTaken, .needsMaintenance:
-                return AppDesign.red
-            default:
-                return UIColor.black
-            }
-        }
-
         private func urlStringForIcon(name: String) -> String {
             return "https://www.geocaching.com/images/icons/\(name).gif"
         }

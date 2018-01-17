@@ -79,26 +79,4 @@ enum GeocacheType: Int {
             return NSLocalizedString("cache.type.gigaevent", comment: "Cache type: Giga Event")
         }
     }
-
-    var color: UIColor {
-        switch self {
-        case .traditional, .letterboxHybrid, .groundspeakHQ, .ape:
-            return AppDesign.green
-        case .multi:
-            return AppDesign.yellow
-        case .unknown, .wherigo:
-            return AppDesign.blue
-        case .event,
-             .megaEvent,
-             .gigaEvent,
-             .cacheInTrashOutEvent,
-             .gpsAdventuresExhibit,
-             .groundspeakBlockParty,
-             .groundspeakLostAndFoundCelebration,
-             .lostAndFoundEvent:
-            return AppDesign.red
-        case .virtual, .earthcache, .webcam, .locationless:
-            return AppDesign.gray
-        }
-    }
 }

@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AC1DF6088492C789843D2BD /* Pods_GeocachingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3064964140EAB963968B351 /* Pods_GeocachingAPI.framework */; };
+		CD9828F0200FC8360049940C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9828EF200FC8360049940C /* AppDelegate.swift */; };
+		CD9828F2200FC8360049940C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9828F1200FC8360049940C /* ViewController.swift */; };
+		CD9828F5200FC8360049940C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9828F3200FC8360049940C /* Main.storyboard */; };
+		CD9828F7200FC8360049940C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9828F6200FC8360049940C /* Assets.xcassets */; };
+		CD9828FA200FC8360049940C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9828F8200FC8360049940C /* LaunchScreen.storyboard */; };
+		CD982923200FC8860049940C /* GeocachingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982902200FC8850049940C /* GeocachingAPI.swift */; };
+		CD982924200FC8860049940C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982903200FC8850049940C /* APIConstants.swift */; };
+		CD982925200FC8860049940C /* GetAPILimitsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982905200FC8850049940C /* GetAPILimitsResponse.swift */; };
+		CD982926200FC8860049940C /* GetUsersCacheCountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982906200FC8850049940C /* GetUsersCacheCountsResponse.swift */; };
+		CD982927200FC8860049940C /* GetUsersGeocacheLogsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982907200FC8850049940C /* GetUsersGeocacheLogsResponse.swift */; };
+		CD982928200FC8860049940C /* GeocacheLogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982909200FC8850049940C /* GeocacheLogResponse.swift */; };
+		CD982929200FC8860049940C /* GeocacheStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290A200FC8850049940C /* GeocacheStatusResponse.swift */; };
+		CD98292A200FC8860049940C /* UserCacheCountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290B200FC8850049940C /* UserCacheCountsResponse.swift */; };
+		CD98292B200FC8860049940C /* LimitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290C200FC8850049940C /* LimitResponse.swift */; };
+		CD98292C200FC8860049940C /* LogTypeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290D200FC8850049940C /* LogTypeResponse.swift */; };
+		CD98292D200FC8860049940C /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290E200FC8850049940C /* UserResponse.swift */; };
+		CD98292E200FC8860049940C /* MaxPerPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290F200FC8850049940C /* MaxPerPageResponse.swift */; };
+		CD98292F200FC8860049940C /* BaseLogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982910200FC8850049940C /* BaseLogResponse.swift */; };
+		CD982930200FC8860049940C /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982911200FC8850049940C /* ImageResponse.swift */; };
+		CD982931200FC8860049940C /* StatusReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982912200FC8850049940C /* StatusReponse.swift */; };
+		CD982932200FC8860049940C /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982913200FC8850049940C /* ProfileResponse.swift */; };
+		CD982933200FC8860049940C /* GeocacheType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982914200FC8850049940C /* GeocacheType.swift */; };
+		CD982934200FC8860049940C /* WaypointResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982915200FC8850049940C /* WaypointResponse.swift */; };
+		CD982935200FC8860049940C /* GetUserGalleryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982916200FC8850049940C /* GetUserGalleryResponse.swift */; };
+		CD982936200FC8860049940C /* GetUserProfileReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982917200FC8850049940C /* GetUserProfileReponse.swift */; };
+		CD982937200FC8860049940C /* SaveUserWaypointResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982918200FC8850049940C /* SaveUserWaypointResponse.swift */; };
+		CD982938200FC8860049940C /* GetGeocacheStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982919200FC8850049940C /* GetGeocacheStatusResponse.swift */; };
+		CD982939200FC8860049940C /* GetGeocacheTypesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98291A200FC8850049940C /* GetGeocacheTypesResponse.swift */; };
+		CD98293A200FC8860049940C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98291C200FC8850049940C /* APIError.swift */; };
+		CD98293B200FC8860049940C /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98291E200FC8850049940C /* APIRequest.swift */; };
+		CD98293C200FC8860049940C /* DotNetJSONTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982920200FC8850049940C /* DotNetJSONTransform.swift */; };
+		CD98293D200FC8860049940C /* IsoDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982921200FC8850049940C /* IsoDateTransform.swift */; };
+		CD98293E200FC8860049940C /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982922200FC8850049940C /* SettingsManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		034D6B6C92651E7315561493 /* Pods-GeocachingAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeocachingAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeocachingAPI/Pods-GeocachingAPI.release.xcconfig"; sourceTree = "<group>"; };
+		C7CEA9C4F58B6F727C835926 /* Pods-GeocachingAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeocachingAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeocachingAPI/Pods-GeocachingAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		CD9828EC200FC8360049940C /* GeocachingAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeocachingAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD9828EF200FC8360049940C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD9828F1200FC8360049940C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD9828F4200FC8360049940C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD9828F6200FC8360049940C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD9828F9200FC8360049940C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD9828FB200FC8360049940C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD982902200FC8850049940C /* GeocachingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocachingAPI.swift; sourceTree = "<group>"; };
+		CD982903200FC8850049940C /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		CD982905200FC8850049940C /* GetAPILimitsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAPILimitsResponse.swift; sourceTree = "<group>"; };
+		CD982906200FC8850049940C /* GetUsersCacheCountsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersCacheCountsResponse.swift; sourceTree = "<group>"; };
+		CD982907200FC8850049940C /* GetUsersGeocacheLogsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersGeocacheLogsResponse.swift; sourceTree = "<group>"; };
+		CD982909200FC8850049940C /* GeocacheLogResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocacheLogResponse.swift; sourceTree = "<group>"; };
+		CD98290A200FC8850049940C /* GeocacheStatusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocacheStatusResponse.swift; sourceTree = "<group>"; };
+		CD98290B200FC8850049940C /* UserCacheCountsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCacheCountsResponse.swift; sourceTree = "<group>"; };
+		CD98290C200FC8850049940C /* LimitResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitResponse.swift; sourceTree = "<group>"; };
+		CD98290D200FC8850049940C /* LogTypeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTypeResponse.swift; sourceTree = "<group>"; };
+		CD98290E200FC8850049940C /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		CD98290F200FC8850049940C /* MaxPerPageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxPerPageResponse.swift; sourceTree = "<group>"; };
+		CD982910200FC8850049940C /* BaseLogResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLogResponse.swift; sourceTree = "<group>"; };
+		CD982911200FC8850049940C /* ImageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
+		CD982912200FC8850049940C /* StatusReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusReponse.swift; sourceTree = "<group>"; };
+		CD982913200FC8850049940C /* ProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		CD982914200FC8850049940C /* GeocacheType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocacheType.swift; sourceTree = "<group>"; };
+		CD982915200FC8850049940C /* WaypointResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaypointResponse.swift; sourceTree = "<group>"; };
+		CD982916200FC8850049940C /* GetUserGalleryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserGalleryResponse.swift; sourceTree = "<group>"; };
+		CD982917200FC8850049940C /* GetUserProfileReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserProfileReponse.swift; sourceTree = "<group>"; };
+		CD982918200FC8850049940C /* SaveUserWaypointResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUserWaypointResponse.swift; sourceTree = "<group>"; };
+		CD982919200FC8850049940C /* GetGeocacheStatusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGeocacheStatusResponse.swift; sourceTree = "<group>"; };
+		CD98291A200FC8850049940C /* GetGeocacheTypesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGeocacheTypesResponse.swift; sourceTree = "<group>"; };
+		CD98291C200FC8850049940C /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CD98291E200FC8850049940C /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		CD982920200FC8850049940C /* DotNetJSONTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotNetJSONTransform.swift; sourceTree = "<group>"; };
+		CD982921200FC8850049940C /* IsoDateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoDateTransform.swift; sourceTree = "<group>"; };
+		CD982922200FC8850049940C /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		D3064964140EAB963968B351 /* Pods_GeocachingAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeocachingAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD9828E9200FC8360049940C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC1DF6088492C789843D2BD /* Pods_GeocachingAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BF728AD9829E28999326BC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3064964140EAB963968B351 /* Pods_GeocachingAPI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD9828E3200FC8360049940C = {
+			isa = PBXGroup;
+			children = (
+				CD9828EE200FC8360049940C /* GeocachingAPI */,
+				CD9828ED200FC8360049940C /* Products */,
+				FFFFE539675362158B0F7FAB /* Pods */,
+				4BF728AD9829E28999326BC1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CD9828ED200FC8360049940C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD9828EC200FC8360049940C /* GeocachingAPI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD9828EE200FC8360049940C /* GeocachingAPI */ = {
+			isa = PBXGroup;
+			children = (
+				CD982901200FC8850049940C /* API */,
+				CD9828EF200FC8360049940C /* AppDelegate.swift */,
+				CD9828F1200FC8360049940C /* ViewController.swift */,
+				CD9828F3200FC8360049940C /* Main.storyboard */,
+				CD9828F6200FC8360049940C /* Assets.xcassets */,
+				CD9828F8200FC8360049940C /* LaunchScreen.storyboard */,
+				CD9828FB200FC8360049940C /* Info.plist */,
+			);
+			path = GeocachingAPI;
+			sourceTree = "<group>";
+		};
+		CD982901200FC8850049940C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CD982904200FC8850049940C /* Responses */,
+				CD98291B200FC8850049940C /* Models */,
+				CD98291D200FC8850049940C /* Requests */,
+				CD98291F200FC8850049940C /* Transforms */,
+				CD982902200FC8850049940C /* GeocachingAPI.swift */,
+				CD982903200FC8850049940C /* APIConstants.swift */,
+				CD982922200FC8850049940C /* SettingsManager.swift */,
+			);
+			name = API;
+			path = Sources/API;
+			sourceTree = SOURCE_ROOT;
+		};
+		CD982904200FC8850049940C /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				CD982905200FC8850049940C /* GetAPILimitsResponse.swift */,
+				CD982906200FC8850049940C /* GetUsersCacheCountsResponse.swift */,
+				CD982907200FC8850049940C /* GetUsersGeocacheLogsResponse.swift */,
+				CD982908200FC8850049940C /* Models */,
+				CD982916200FC8850049940C /* GetUserGalleryResponse.swift */,
+				CD982917200FC8850049940C /* GetUserProfileReponse.swift */,
+				CD982918200FC8850049940C /* SaveUserWaypointResponse.swift */,
+				CD982919200FC8850049940C /* GetGeocacheStatusResponse.swift */,
+				CD98291A200FC8850049940C /* GetGeocacheTypesResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		CD982908200FC8850049940C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD982909200FC8850049940C /* GeocacheLogResponse.swift */,
+				CD98290A200FC8850049940C /* GeocacheStatusResponse.swift */,
+				CD98290B200FC8850049940C /* UserCacheCountsResponse.swift */,
+				CD98290C200FC8850049940C /* LimitResponse.swift */,
+				CD98290D200FC8850049940C /* LogTypeResponse.swift */,
+				CD98290E200FC8850049940C /* UserResponse.swift */,
+				CD98290F200FC8850049940C /* MaxPerPageResponse.swift */,
+				CD982910200FC8850049940C /* BaseLogResponse.swift */,
+				CD982911200FC8850049940C /* ImageResponse.swift */,
+				CD982912200FC8850049940C /* StatusReponse.swift */,
+				CD982913200FC8850049940C /* ProfileResponse.swift */,
+				CD982914200FC8850049940C /* GeocacheType.swift */,
+				CD982915200FC8850049940C /* WaypointResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD98291B200FC8850049940C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD98291C200FC8850049940C /* APIError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD98291D200FC8850049940C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				CD98291E200FC8850049940C /* APIRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		CD98291F200FC8850049940C /* Transforms */ = {
+			isa = PBXGroup;
+			children = (
+				CD982920200FC8850049940C /* DotNetJSONTransform.swift */,
+				CD982921200FC8850049940C /* IsoDateTransform.swift */,
+			);
+			path = Transforms;
+			sourceTree = "<group>";
+		};
+		FFFFE539675362158B0F7FAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEA9C4F58B6F727C835926 /* Pods-GeocachingAPI.debug.xcconfig */,
+				034D6B6C92651E7315561493 /* Pods-GeocachingAPI.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD9828EB200FC8360049940C /* GeocachingAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD9828FE200FC8360049940C /* Build configuration list for PBXNativeTarget "GeocachingAPI" */;
+			buildPhases = (
+				447248469646DFB4B91DA163 /* [CP] Check Pods Manifest.lock */,
+				CD9828E8200FC8360049940C /* Sources */,
+				CD9828E9200FC8360049940C /* Frameworks */,
+				CD9828EA200FC8360049940C /* Resources */,
+				2B1AF947706BF9C14CC6AA27 /* [CP] Embed Pods Frameworks */,
+				3FC3193938C67C7C2A0DA07B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeocachingAPI;
+			productName = GeocachingAPI;
+			productReference = CD9828EC200FC8360049940C /* GeocachingAPI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD9828E4200FC8360049940C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Patrick Steiner";
+				TargetAttributes = {
+					CD9828EB200FC8360049940C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CD9828E7200FC8360049940C /* Build configuration list for PBXProject "GeocachingAPI" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD9828E3200FC8360049940C;
+			productRefGroup = CD9828ED200FC8360049940C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD9828EB200FC8360049940C /* GeocachingAPI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD9828EA200FC8360049940C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD9828FA200FC8360049940C /* LaunchScreen.storyboard in Resources */,
+				CD9828F7200FC8360049940C /* Assets.xcassets in Resources */,
+				CD9828F5200FC8360049940C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B1AF947706BF9C14CC6AA27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GeocachingAPI/Pods-GeocachingAPI-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeocachingAPI/Pods-GeocachingAPI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FC3193938C67C7C2A0DA07B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeocachingAPI/Pods-GeocachingAPI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		447248469646DFB4B91DA163 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GeocachingAPI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD9828E8200FC8360049940C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD982930200FC8860049940C /* ImageResponse.swift in Sources */,
+				CD98292A200FC8860049940C /* UserCacheCountsResponse.swift in Sources */,
+				CD982932200FC8860049940C /* ProfileResponse.swift in Sources */,
+				CD982939200FC8860049940C /* GetGeocacheTypesResponse.swift in Sources */,
+				CD98292D200FC8860049940C /* UserResponse.swift in Sources */,
+				CD982924200FC8860049940C /* APIConstants.swift in Sources */,
+				CD982925200FC8860049940C /* GetAPILimitsResponse.swift in Sources */,
+				CD982936200FC8860049940C /* GetUserProfileReponse.swift in Sources */,
+				CD9828F2200FC8360049940C /* ViewController.swift in Sources */,
+				CD982926200FC8860049940C /* GetUsersCacheCountsResponse.swift in Sources */,
+				CD982928200FC8860049940C /* GeocacheLogResponse.swift in Sources */,
+				CD982937200FC8860049940C /* SaveUserWaypointResponse.swift in Sources */,
+				CD982935200FC8860049940C /* GetUserGalleryResponse.swift in Sources */,
+				CD98292B200FC8860049940C /* LimitResponse.swift in Sources */,
+				CD982923200FC8860049940C /* GeocachingAPI.swift in Sources */,
+				CD982934200FC8860049940C /* WaypointResponse.swift in Sources */,
+				CD982929200FC8860049940C /* GeocacheStatusResponse.swift in Sources */,
+				CD982933200FC8860049940C /* GeocacheType.swift in Sources */,
+				CD982927200FC8860049940C /* GetUsersGeocacheLogsResponse.swift in Sources */,
+				CD98293D200FC8860049940C /* IsoDateTransform.swift in Sources */,
+				CD9828F0200FC8360049940C /* AppDelegate.swift in Sources */,
+				CD98292E200FC8860049940C /* MaxPerPageResponse.swift in Sources */,
+				CD982938200FC8860049940C /* GetGeocacheStatusResponse.swift in Sources */,
+				CD98292C200FC8860049940C /* LogTypeResponse.swift in Sources */,
+				CD982931200FC8860049940C /* StatusReponse.swift in Sources */,
+				CD98293C200FC8860049940C /* DotNetJSONTransform.swift in Sources */,
+				CD98293E200FC8860049940C /* SettingsManager.swift in Sources */,
+				CD98292F200FC8860049940C /* BaseLogResponse.swift in Sources */,
+				CD98293B200FC8860049940C /* APIRequest.swift in Sources */,
+				CD98293A200FC8860049940C /* APIError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CD9828F3200FC8360049940C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD9828F4200FC8360049940C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD9828F8200FC8360049940C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD9828F9200FC8360049940C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD9828FC200FC8360049940C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD9828FD200FC8360049940C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD9828FF200FC8360049940C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7CEA9C4F58B6F727C835926 /* Pods-GeocachingAPI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X47Q5RERE;
+				INFOPLIST_FILE = GeocachingAPI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.helmsdeep.GeocachingAPI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD982900200FC8360049940C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 034D6B6C92651E7315561493 /* Pods-GeocachingAPI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X47Q5RERE;
+				INFOPLIST_FILE = GeocachingAPI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.helmsdeep.GeocachingAPI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD9828E7200FC8360049940C /* Build configuration list for PBXProject "GeocachingAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD9828FC200FC8360049940C /* Debug */,
+				CD9828FD200FC8360049940C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD9828FE200FC8360049940C /* Build configuration list for PBXNativeTarget "GeocachingAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD9828FF200FC8360049940C /* Debug */,
+				CD982900200FC8360049940C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD9828E4200FC8360049940C /* Project object */;
+}
