@@ -14,11 +14,6 @@ import AlamofireObjectMapper
 
 public class GeocachingAPI {
     private var oAuthSwiftManager: OAuth1Swift?
-    private var loggedIn = false {
-        didSet {
-            SettingsManager.isLoggedIn = loggedIn
-        }
-    }
 
     public init() {}
 
@@ -53,8 +48,28 @@ public class GeocachingAPI {
 
     // MARK: OAuth
 
+    public static func setupAPI(apiConsumerKey: String, apiConsumerSecret: String, oAuthUrlScheme: String) {
+        SettingsManager.apiConsumerKey = apiConsumerKey
+        SettingsManager.apiConsumerSecret = apiConsumerSecret
+        SettingsManager.urlScheme = oAuthUrlScheme
+    }
+
     public static func handle(url: URL) {
         OAuthSwift.handle(url: url)
+    }
+
+    public static var isLoggedIn: Bool {
+        return SettingsManager.isLoggedIn
+    }
+
+    public static var loggedInUsername: String? {
+        return SettingsManager.username
+    }
+
+    private var loggedIn = false {
+        didSet {
+            SettingsManager.isLoggedIn = loggedIn
+        }
     }
 
     public func signIn(_ viewController: UIViewController?, completion: @escaping (_ successful: Bool, _ error: Error?) -> Void) {
@@ -113,6 +128,7 @@ public class GeocachingAPI {
         }
     }
 
+    // TODO: move to hamster app
     private func handleBackgroudFetch() {
 //        if let applicationDelegate = UIApplication.shared.delegate as? AppDelegate {
 ////            applicationDelegate.setupBackgroundFetch()
@@ -300,9 +316,9 @@ public class GeocachingAPI {
     /**
      Get API limits.
     */
-    public func getAPILimits(completion: @escaping (_ successful: Bool, _ apiLimits: GetAPILimitsResponse?, _ error: Error?) -> Void) {
+    public func getAPILimits(completion: @escaping (_ successful: Bool, _ apiLimits: LimitsResponse?, _ maxPerPage: MaxPerPageResponse?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
-            completion(false, nil, nil)
+            completion(false, nil, nil, nil)
             return
         }
 
@@ -313,10 +329,10 @@ public class GeocachingAPI {
             .responseObject { (response: DataResponse<GetAPILimitsResponse>) in
                 switch response.result {
                 case .success(let value):
-                    completion(true, value, nil)
+                    completion(true, value.limits, value.maxPerPage, nil)
 
                 case .failure(let error):
-                    completion(false, nil, error)
+                    completion(false, nil, nil, error)
                 }
         }
     }

@@ -2,7 +2,7 @@
 //  LogTypeResponse.swift
 //  GeocachingAPI
 //
-//  Created by Patrick Steiner on 23/04/2017.
+//  Created by Patrick Steiner on 23.04.17.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class LogTypeResponse: Mappable {
     public enum LogType: Int {
-        case unarchiveA = 1 // Dont know why there are 2 unarchive types
+        case unarchiveA = 1 // Don't know why there are 2 unarchive types
         case foundIt = 2
         case didntFindIt = 3
         case writeNote = 4
@@ -26,7 +26,7 @@ public class LogTypeResponse: Mappable {
         case droppedOff = 14
         case transfer = 15
         case markMissing = 16
-        case postReviewerNoteA = 18 // Dont know why there are 2 types
+        case postReviewerNoteA = 18 // Don't know why there are 2 types
         case grabIt = 19
         case temporarilyDisableListing = 22
         case enableListing = 23
@@ -51,6 +51,7 @@ public class LogTypeResponse: Mappable {
             return [4, 9, 10, 74]
         }
 
+        // TODO: remove this? or add localized strings file
         public var localizedName: String {
             switch self {
             case .unarchiveA, .unarchive:

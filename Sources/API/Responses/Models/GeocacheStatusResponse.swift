@@ -2,7 +2,7 @@
 //  GeocacheStatusResponse.swift
 //  GeocachingAPI
 //
-//  Created by Patrick Steiner on 12/06/2017.
+//  Created by Patrick Steiner on 12.06.17.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
 //
 

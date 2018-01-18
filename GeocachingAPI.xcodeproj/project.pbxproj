@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AC1DF6088492C789843D2BD /* Pods_GeocachingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3064964140EAB963968B351 /* Pods_GeocachingAPI.framework */; };
+		CD3AC99E20108B9700E04D0A /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982922200FC8850049940C /* SettingsManager.swift */; };
 		CD9828F0200FC8360049940C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9828EF200FC8360049940C /* AppDelegate.swift */; };
 		CD9828F2200FC8360049940C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9828F1200FC8360049940C /* ViewController.swift */; };
 		CD9828F5200FC8360049940C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9828F3200FC8360049940C /* Main.storyboard */; };
@@ -21,7 +22,7 @@
 		CD982928200FC8860049940C /* GeocacheLogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982909200FC8850049940C /* GeocacheLogResponse.swift */; };
 		CD982929200FC8860049940C /* GeocacheStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290A200FC8850049940C /* GeocacheStatusResponse.swift */; };
 		CD98292A200FC8860049940C /* UserCacheCountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290B200FC8850049940C /* UserCacheCountsResponse.swift */; };
-		CD98292B200FC8860049940C /* LimitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290C200FC8850049940C /* LimitResponse.swift */; };
+		CD98292B200FC8860049940C /* LimitsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290C200FC8850049940C /* LimitsResponse.swift */; };
 		CD98292C200FC8860049940C /* LogTypeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290D200FC8850049940C /* LogTypeResponse.swift */; };
 		CD98292D200FC8860049940C /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290E200FC8850049940C /* UserResponse.swift */; };
 		CD98292E200FC8860049940C /* MaxPerPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98290F200FC8850049940C /* MaxPerPageResponse.swift */; };
@@ -40,7 +41,6 @@
 		CD98293B200FC8860049940C /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98291E200FC8850049940C /* APIRequest.swift */; };
 		CD98293C200FC8860049940C /* DotNetJSONTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982920200FC8850049940C /* DotNetJSONTransform.swift */; };
 		CD98293D200FC8860049940C /* IsoDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982921200FC8850049940C /* IsoDateTransform.swift */; };
-		CD98293E200FC8860049940C /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982922200FC8850049940C /* SettingsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +61,7 @@
 		CD982909200FC8850049940C /* GeocacheLogResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocacheLogResponse.swift; sourceTree = "<group>"; };
 		CD98290A200FC8850049940C /* GeocacheStatusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocacheStatusResponse.swift; sourceTree = "<group>"; };
 		CD98290B200FC8850049940C /* UserCacheCountsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCacheCountsResponse.swift; sourceTree = "<group>"; };
-		CD98290C200FC8850049940C /* LimitResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitResponse.swift; sourceTree = "<group>"; };
+		CD98290C200FC8850049940C /* LimitsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitsResponse.swift; sourceTree = "<group>"; };
 		CD98290D200FC8850049940C /* LogTypeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTypeResponse.swift; sourceTree = "<group>"; };
 		CD98290E200FC8850049940C /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		CD98290F200FC8850049940C /* MaxPerPageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxPerPageResponse.swift; sourceTree = "<group>"; };
@@ -154,10 +154,10 @@
 		CD982904200FC8850049940C /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				CD982908200FC8850049940C /* Models */,
 				CD982905200FC8850049940C /* GetAPILimitsResponse.swift */,
 				CD982906200FC8850049940C /* GetUsersCacheCountsResponse.swift */,
 				CD982907200FC8850049940C /* GetUsersGeocacheLogsResponse.swift */,
-				CD982908200FC8850049940C /* Models */,
 				CD982916200FC8850049940C /* GetUserGalleryResponse.swift */,
 				CD982917200FC8850049940C /* GetUserProfileReponse.swift */,
 				CD982918200FC8850049940C /* SaveUserWaypointResponse.swift */,
@@ -173,7 +173,7 @@
 				CD982909200FC8850049940C /* GeocacheLogResponse.swift */,
 				CD98290A200FC8850049940C /* GeocacheStatusResponse.swift */,
 				CD98290B200FC8850049940C /* UserCacheCountsResponse.swift */,
-				CD98290C200FC8850049940C /* LimitResponse.swift */,
+				CD98290C200FC8850049940C /* LimitsResponse.swift */,
 				CD98290D200FC8850049940C /* LogTypeResponse.swift */,
 				CD98290E200FC8850049940C /* UserResponse.swift */,
 				CD98290F200FC8850049940C /* MaxPerPageResponse.swift */,
@@ -385,7 +385,7 @@
 				CD982928200FC8860049940C /* GeocacheLogResponse.swift in Sources */,
 				CD982937200FC8860049940C /* SaveUserWaypointResponse.swift in Sources */,
 				CD982935200FC8860049940C /* GetUserGalleryResponse.swift in Sources */,
-				CD98292B200FC8860049940C /* LimitResponse.swift in Sources */,
+				CD98292B200FC8860049940C /* LimitsResponse.swift in Sources */,
 				CD982923200FC8860049940C /* GeocachingAPI.swift in Sources */,
 				CD982934200FC8860049940C /* WaypointResponse.swift in Sources */,
 				CD982929200FC8860049940C /* GeocacheStatusResponse.swift in Sources */,
@@ -398,7 +398,7 @@
 				CD98292C200FC8860049940C /* LogTypeResponse.swift in Sources */,
 				CD982931200FC8860049940C /* StatusReponse.swift in Sources */,
 				CD98293C200FC8860049940C /* DotNetJSONTransform.swift in Sources */,
-				CD98293E200FC8860049940C /* SettingsManager.swift in Sources */,
+				CD3AC99E20108B9700E04D0A /* SettingsManager.swift in Sources */,
 				CD98292F200FC8860049940C /* BaseLogResponse.swift in Sources */,
 				CD98293B200FC8860049940C /* APIRequest.swift in Sources */,
 				CD98293A200FC8860049940C /* APIError.swift in Sources */,

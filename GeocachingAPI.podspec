@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "GeocachingAPI"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Geocaching API for Swift."
   s.homepage     = "https://github.com/patricks/GeocachingAPI"
   s.description  = "A Swift framework for the Geocaching API."
   s.license      = "MIT"
-  s.author             = { "Patrick" => "patrick@helmsdeep.at" }
+  s.author       = { "Patrick" => "patrick@helmsdeep.at" }
 
   s.ios.deployment_target = "10.0"
 

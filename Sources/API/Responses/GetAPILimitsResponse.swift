@@ -9,14 +9,14 @@
 import Foundation
 import ObjectMapper
 
-public class GetAPILimitsResponse: Mappable {
-    public var status: StatusResponse?
-    public var limits: LimitResponse?
-    public var maxPerPage: MaxPerPageResponse?
+class GetAPILimitsResponse: Mappable {
+    var status: StatusResponse?
+    var limits: LimitsResponse?
+    var maxPerPage: MaxPerPageResponse?
 
-    public required init?(map: Map) { }
+    required init?(map: Map) { }
 
-    public func mapping(map: Map) {
+    func mapping(map: Map) {
         status <- map["Status"]
         limits <- map["Limits"]
         maxPerPage <- map["MaxPerPage"]

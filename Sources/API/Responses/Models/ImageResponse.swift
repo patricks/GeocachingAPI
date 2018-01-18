@@ -2,7 +2,7 @@
 //  ImageResponse.swift
 //  GeocachingAPI
 //
-//  Created by Patrick Steiner on 23/04/2017.
+//  Created by Patrick Steiner on 23.04.17.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
 //
 

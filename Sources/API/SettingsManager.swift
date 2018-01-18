@@ -3,12 +3,12 @@
 //  GeocachingAPI
 //
 //  Created by Patrick Steiner on 04.08.16.
-//  Copyright © 2016 Patrick. All rights reserved.
+//  Copyright © 2016 Patrick Steiner. All rights reserved.
 //
 
 import Foundation
 
-public class SettingsManager {
+class SettingsManager {
     // Settings Keys
     private static let apiTokenKey = "apiToken"
     private static let usernameKey = "username"
@@ -19,7 +19,7 @@ public class SettingsManager {
 
     // MARK: API
 
-    public static var apiToken: String? {
+    static var apiToken: String? {
         get {
             return UserDefaults.standard.string(forKey: apiTokenKey)
         }
@@ -29,7 +29,7 @@ public class SettingsManager {
         }
     }
 
-    public static var username: String? {
+    static var username: String? {
         get {
             return UserDefaults.standard.string(forKey: usernameKey)
         }
@@ -39,7 +39,7 @@ public class SettingsManager {
         }
     }
 
-    public static var isLoggedIn: Bool {
+    static var isLoggedIn: Bool {
         get {
             return UserDefaults.standard.bool(forKey: loggedInKey)
         }
@@ -55,7 +55,7 @@ public class SettingsManager {
         }
     }
 
-    public static var apiConsumerKey: String? {
+    static var apiConsumerKey: String? {
         get {
             return UserDefaults.standard.string(forKey: apiConsumerKeyKey)
         }
@@ -65,7 +65,7 @@ public class SettingsManager {
         }
     }
 
-    public static var apiConsumerSecret: String? {
+    static var apiConsumerSecret: String? {
         get {
             return UserDefaults.standard.string(forKey: apiConsumerSecretKey)
         }
@@ -75,7 +75,7 @@ public class SettingsManager {
         }
     }
 
-    public static var urlScheme: String? {
+    static var urlScheme: String? {
         get {
             return UserDefaults.standard.string(forKey: urlSchemeKey)
         }

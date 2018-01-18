@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class LimitResponse: Mappable {
+public class LimitsResponse: Mappable {
     public var cacheLimits: [CacheLimitResponse]?
     public var enforceCacheLimits: Bool?
     public var enforceLiteCacheLimits: Bool?

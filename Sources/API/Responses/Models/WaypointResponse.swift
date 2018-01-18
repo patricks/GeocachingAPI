@@ -10,21 +10,21 @@ import Foundation
 import ObjectMapper
 import AFDateHelper
 
-class WaypointResponse: Mappable {
-    var associatedAdditionalWaypoint: String?
-    var cacheCode: String?
-    var description: String?
-    var id: Int?
-    var isCorrectedCoordinate: Bool?
-    var isUserCompleted: Bool?
-    var latitude: Double?
-    var longitude: Double?
-    var utcDate: Date?
-    var userId: Int?
+public class WaypointResponse: Mappable {
+    public var associatedAdditionalWaypoint: String?
+    public var cacheCode: String?
+    public var description: String?
+    public var id: Int?
+    public var isCorrectedCoordinate: Bool?
+    public var isUserCompleted: Bool?
+    public var latitude: Double?
+    public var longitude: Double?
+    public var utcDate: Date?
+    public var userId: Int?
 
-    required init?(map: Map) { }
+    public required init?(map: Map) { }
 
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         associatedAdditionalWaypoint <- map["AssociatedAdditionalWaypoint"]
         cacheCode <- map["CacheCode"]
         description <- map["Description"]

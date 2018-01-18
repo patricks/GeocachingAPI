@@ -2,25 +2,26 @@
 //  APIError.swift
 //  GeocachingAPI
 //
-//  Created by Patrick Steiner on 05/07/2017.
+//  Created by Patrick Steiner on 05.07.17.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
 //
 
 import Foundation
 
-enum GeocachingErrorCode: Int {
+public enum GeocachingErrorCode: Int {
     case authenticationError = 3
 }
 
-enum APIError: Error {
+public enum APIError: Error {
     case statusCodeError
     case geocachingGeneralError
     case geocachingAuthenticationError
     case noTokenError
 }
 
+// TODO: is this used???
 extension APIError: LocalizedError {
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .statusCodeError:
             return "HTTP Status Code Error"

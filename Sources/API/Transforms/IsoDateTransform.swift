@@ -2,7 +2,7 @@
 //  IsoDateTransform.swift
 //  GeocachingAPI
 //
-//  Created by Patrick Steiner on 06/07/2017.
+//  Created by Patrick Steiner on 06.07.17.
 //  Copyright © 2017 Patrick Steiner. All rights reserved.
 //
 
