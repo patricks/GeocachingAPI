@@ -1,0 +1,86 @@
+/* Log type: Announcement */
+"log.type.announcement" = "Announcement";
+
+/* Log type: Archive */
+"log.type.archive" = "Archived";
+
+/* Log type: Will Attended */
+"log.type.attended" = "Attended";
+
+/* Log type: Didn't find it */
+"log.type.didntFindIt" = "Didn't find it";
+
+/* Log type: Discovered It */
+"log.type.discoveredIt" = "Discovered It";
+
+/* Log type: Dropped Off */
+"log.type.droppedOff" = "Dropped Off";
+
+/* Log type: Enable Listing */
+"log.type.enableListing" = "Enable Listing";
+
+/* Log type: Found it */
+"log.type.foundit" = "Found it";
+
+/* Log type: Grab It (Not from a Cache) */
+"log.type.grabIt" = "Grab It";
+
+/* Log type: Mark Missing */
+"log.type.markMissing" = "Mark Missing";
+
+/* Log type: Move To Collection */
+"log.type.moveToCollection" = "Move To Collection";
+
+/* Log type: Move To Inventory */
+"log.type.moveToInventory" = "Move To Inventory";
+
+/* Log type: Needs Archived */
+"log.type.needsArchived" = "Needs to be Archived";
+
+/* Log type: Needs Maintenance */
+"log.type.needsMaintenance" = "Needs Maintenance";
+
+/* Log type: Owner Maintenance */
+"log.type.ownerMaintenance" = "Owner Maintenance";
+
+/* Log type: Permanently Archived */
+"log.type.permanentlyArchived" = "Permanently Archived";
+
+/* Log type: Post Reviewer Note */
+"log.type.postReviewerNote" = "Reviewer Note";
+
+/* Log type: Publish Listing */
+"log.type.publishListing" = "Publish Listing";
+
+/* Log type: Retract Listing */
+"log.type.retractListing" = "Retract Listing";
+
+/* Log type: Retrieve it from a Cache */
+"log.type.retrieveItFromaCache" = "Retrieve it from a Cache";
+
+/* Log type: Submit for Review */
+"log.type.submitForReview" = "Submit for Review";
+
+/* Log type: Temporarily Disable Listing */
+"log.type.temporarilyDisableListing" = "Temporarily Disable Listing";
+
+/* Log type: Transfer */
+"log.type.transfer" = "Transfered";
+
+/* Log type: Unarchive */
+"log.type.unarchive" = "Unarchived";
+
+/* Log type: Update Coordinates */
+"log.type.updateCoordinates" = "Updated Coordinates";
+
+/* Log type: Visited */
+"log.type.visited" = "Visited";
+
+/* Log type: Webcam Photo Taken */
+"log.type.webcamPhotoTaken" = "Webcam Photo Taken";
+
+/* Log type: Will Attend */
+"log.type.willAttend" = "Will Attend";
+
+/* Log type: Write note */
+"log.type.writeNote" = "Write note";

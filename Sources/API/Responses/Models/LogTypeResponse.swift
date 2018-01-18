@@ -51,67 +51,69 @@ public class LogTypeResponse: Mappable {
             return [4, 9, 10, 74]
         }
 
-        // TODO: remove this? or add localized strings file
         public var localizedName: String {
+            let path = Bundle(for: LogTypeResponse.self).path(forResource: "GeocachingAPI", ofType: "bundle")!
+            let bundle = Bundle(path: path) ?? Bundle.main
+
             switch self {
             case .unarchiveA, .unarchive:
-                return NSLocalizedString("log.type.unarchive", comment: "Log type: Unarchive")
+                return NSLocalizedString("log.type.unarchive", bundle: bundle, comment: "Log type: Unarchive")
             case .foundIt:
-                return NSLocalizedString("log.type.foundit", comment: "Log type: Found it")
+                return NSLocalizedString("log.type.foundit", bundle: bundle, comment: "Log type: Found it")
             case .didntFindIt:
-                return NSLocalizedString("log.type.didntFindIt", comment: "Log type: Didn't find it")
+                return NSLocalizedString("log.type.didntFindIt", bundle: bundle, comment: "Log type: Didn't find it")
             case .writeNote:
-                return NSLocalizedString("log.type.writeNote", comment: "Log type: Write note")
+                return NSLocalizedString("log.type.writeNote", bundle: bundle, comment: "Log type: Write note")
             case .archive:
-                return NSLocalizedString("log.type.archive", comment: "Log type: Archive")
+                return NSLocalizedString("log.type.archive", bundle: bundle, comment: "Log type: Archive")
             case .permanentlyArchived:
-                return NSLocalizedString("log.type.permanentlyArchived", comment: "Log type: Permanently Archived")
+                return NSLocalizedString("log.type.permanentlyArchived", bundle: bundle, comment: "Log type: Permanently Archived")
             case .needsArchived:
-                return NSLocalizedString("log.type.needsArchived", comment: "Log type: Needs Archived")
+                return NSLocalizedString("log.type.needsArchived", bundle: bundle, comment: "Log type: Needs Archived")
             case .willAttend:
-                return NSLocalizedString("log.type.willAttend", comment: "Log type: Will Attend")
+                return NSLocalizedString("log.type.willAttend", bundle: bundle, comment: "Log type: Will Attend")
             case .attended:
-                return NSLocalizedString("log.type.attended", comment: "Log type: Will Attended")
+                return NSLocalizedString("log.type.attended", bundle: bundle, comment: "Log type: Will Attended")
             case .webcamPhotoTaken:
-                return NSLocalizedString("log.type.webcamPhotoTaken", comment: "Log type: Webcam Photo Taken")
+                return NSLocalizedString("log.type.webcamPhotoTaken", bundle: bundle, comment: "Log type: Webcam Photo Taken")
             case .retrieveItFromaCache:
-                return NSLocalizedString("log.type.retrieveItFromaCache", comment: "Log type: Retrieve It from a Cache")
+                return NSLocalizedString("log.type.retrieveItFromaCache", bundle: bundle, comment: "Log type: Retrieve It from a Cache")
             case .droppedOff:
-                return NSLocalizedString("log.type.droppedOff", comment: "Log type: Dropped Off")
+                return NSLocalizedString("log.type.droppedOff", bundle: bundle, comment: "Log type: Dropped Off")
             case .transfer:
-                return NSLocalizedString("log.type.transfer", comment: "Log type: Transfer")
+                return NSLocalizedString("log.type.transfer", bundle: bundle, comment: "Log type: Transfer")
             case .markMissing:
-                return NSLocalizedString("log.type.markMissing", comment: "Log type: Mark Missing")
+                return NSLocalizedString("log.type.markMissing", bundle: bundle, comment: "Log type: Mark Missing")
             case .postReviewerNote, .postReviewerNoteA:
-                return NSLocalizedString("log.type.postReviewerNote", comment: "Log type: Post Reviewer Note")
+                return NSLocalizedString("log.type.postReviewerNote", bundle: bundle, comment: "Log type: Post Reviewer Note")
             case .grabIt:
-                return NSLocalizedString("log.type.grabIt", comment: "Log type: Grab It (Not from a Cache)")
+                return NSLocalizedString("log.type.grabIt", bundle: bundle, comment: "Log type: Grab It (Not from a Cache)")
             case .temporarilyDisableListing:
-                return NSLocalizedString("log.type.temporarilyDisableListing", comment: "Log type: Temporarily Disable Listing")
+                return NSLocalizedString("log.type.temporarilyDisableListing", bundle: bundle, comment: "Log type: Temporarily Disable Listing")
             case .enableListing:
-                return NSLocalizedString("log.type.enableListing", comment: "Log type: Enable Listing")
+                return NSLocalizedString("log.type.enableListing", bundle: bundle, comment: "Log type: Enable Listing")
             case .publishListing:
-                return NSLocalizedString("log.type.publishListing", comment: "Log type: Publish Listing")
+                return NSLocalizedString("log.type.publishListing", bundle: bundle, comment: "Log type: Publish Listing")
             case .retractListing:
-                return NSLocalizedString("log.type.retractListing", comment: "Log type: Retract Listing")
+                return NSLocalizedString("log.type.retractListing", bundle: bundle, comment: "Log type: Retract Listing")
             case .needsMaintenance:
-                return NSLocalizedString("log.type.needsMaintenance", comment: "Log type: Needs Maintenance")
+                return NSLocalizedString("log.type.needsMaintenance", bundle: bundle, comment: "Log type: Needs Maintenance")
             case .ownerMaintenance:
-                return NSLocalizedString("log.type.ownerMaintenance", comment: "Log type: Owner Maintenance")
+                return NSLocalizedString("log.type.ownerMaintenance", bundle: bundle, comment: "Log type: Owner Maintenance")
             case .updateCoordinates:
-                return NSLocalizedString("log.type.updateCoordinates", comment: "Log type: Update Coordinates")
+                return NSLocalizedString("log.type.updateCoordinates", bundle: bundle, comment: "Log type: Update Coordinates")
             case .discoveredIt:
-                return NSLocalizedString("log.type.discoveredIt", comment: "Log type: Discovered It")
+                return NSLocalizedString("log.type.discoveredIt", bundle: bundle, comment: "Log type: Discovered It")
             case .moveToCollection:
-                return NSLocalizedString("log.type.moveToCollection", comment: "Log type: Move To Collection")
+                return NSLocalizedString("log.type.moveToCollection", bundle: bundle, comment: "Log type: Move To Collection")
             case .moveToInventory:
-                return NSLocalizedString("log.type.moveToInventory", comment: "Log type: Move To Inventory")
+                return NSLocalizedString("log.type.moveToInventory", bundle: bundle, comment: "Log type: Move To Inventory")
             case .announcement:
-                return NSLocalizedString("log.type.announcement", comment: "Log type: Announcement")
+                return NSLocalizedString("log.type.announcement", bundle: bundle, comment: "Log type: Announcement")
             case .visited:
-                return NSLocalizedString("log.type.visited", comment: "Log type: Visited")
+                return NSLocalizedString("log.type.visited", bundle: bundle, comment: "Log type: Visited")
             case .submitForReview:
-                return NSLocalizedString("log.type.submitForReview", comment: "Log type: Submit for Review")
+                return NSLocalizedString("log.type.submitForReview", bundle: bundle, comment: "Log type: Submit for Review")
             }
         }
 
