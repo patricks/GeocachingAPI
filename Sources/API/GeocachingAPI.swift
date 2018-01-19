@@ -21,7 +21,6 @@ public class GeocachingAPI {
 
     public func apiStatusResponseHandler(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Request.ValidationResult {
         if response.statusCode != 200 {
-//            AnalyticsManager.logError(statusCode: response.statusCode, errorType: .httpStatusCode)
             return .failure(APIError.statusCodeError)
         }
 
@@ -31,9 +30,7 @@ public class GeocachingAPI {
             if let rootDictionary = jsonWithObjectRoot as? [String: Any] {
                 if let statusDictionary = rootDictionary["Status"] as? [String: Any] {
                     if let statusCode = statusDictionary["StatusCode"] as? Int, statusCode != 0 {
-//                        AnalyticsManager.logError(statusCode: statusCode, errorType: .geocachingStatusCode)
                         if statusCode == GeocachingErrorCode.authenticationError.rawValue {
-
                             // Logging out, because it looks like, that the api token expired
                             self.logout()
                             return .failure(APIError.geocachingAuthenticationError)
@@ -92,47 +89,22 @@ public class GeocachingAPI {
             oAuthSwiftManager!.authorizeURLHandler = SafariURLHandler(viewController: viewController, oauthSwift: oAuthSwiftManager!)
         }
 
-//        AnalyticsManager.logView(withName: .login)
-
         oAuthSwiftManager!.authorize(withCallbackURL: URL(string: "\(urlScheme)://\(APIConstants.oAuthHost)/geocaching")!,
                                      success: { (credential, _, _) in
                                         self.storeUser(apiToken: credential.oauthToken)
-                                        self.handleBackgroudFetch()
                                         completion(true, nil)
         }, failure: { error in
-//            AnalyticsManager.logLogin(successful: false)
             completion(false, error)
         })
     }
 
     public func logout() {
         self.loggedIn = false
-
-        handleBackgroudFetch()
     }
 
     private func storeUser(apiToken: String) {
         SettingsManager.apiToken = apiToken
         self.loggedIn = true
-
-        getYourUserProfile { (successful, profileResponse, _) in
-            if successful {
-                if let username = profileResponse?.user?.username {
-//                    AnalyticsManager.logLogin(successful: true, username: username)
-                } else {
-//                    AnalyticsManager.logLogin(successful: true)
-                }
-            } else {
-//                AnalyticsManager.logLogin(successful: true)
-            }
-        }
-    }
-
-    // TODO: move to hamster app
-    private func handleBackgroudFetch() {
-//        if let applicationDelegate = UIApplication.shared.delegate as? AppDelegate {
-////            applicationDelegate.setupBackgroundFetch()
-//        }
     }
 
     // API Infos: https://api.groundspeak.com/LiveV6/geocaching.svc/help
@@ -170,7 +142,6 @@ public class GeocachingAPI {
         guard let username = profileResponse.user?.username else { return }
 
         SettingsManager.username = username
-//        AnalyticsManager.storeUsername(username)
     }
 
     /**

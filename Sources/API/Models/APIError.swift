@@ -19,7 +19,6 @@ public enum APIError: Error {
     case noTokenError
 }
 
-// TODO: is this used???
 extension APIError: LocalizedError {
     public var errorDescription: String? {
         switch self {

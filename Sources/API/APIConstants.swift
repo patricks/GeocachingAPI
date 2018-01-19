@@ -35,6 +35,6 @@ struct APIConstants {
     static let apiBaseURLPath = "/LiveV6/geocaching.svc/"
 
     // MARK: URL Scheme
-    
+
     static let oAuthHost = "oauth-callback"
 }

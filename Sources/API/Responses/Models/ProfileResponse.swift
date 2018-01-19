@@ -32,7 +32,7 @@ public class ProfileResponse: Mappable {
         user <- map["User"]
         emailData <- map["EmailData"]
 
-        // TODO: implement challenges
+        // TODO: not implement: challenges
     }
 }
 
