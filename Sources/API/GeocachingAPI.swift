@@ -107,6 +107,9 @@ public class GeocachingAPI {
     private func storeUser(apiToken: String) {
         SettingsManager.apiToken = apiToken
         self.loggedIn = true
+
+        // get user profile to store the username
+        getYourUserProfile()
     }
 
     // API Infos: https://api.groundspeak.com/LiveV6/geocaching.svc/help
