@@ -42,7 +42,7 @@ enum APIRequest: URLRequestConvertible {
     case saveUserWaypoint(accessToken: String, cacheCode: String, latitude: Double, longitude: Double, correctedCoordinate: Bool)
 
     // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/DeleteUserWaypoint
-    case deleteUserWaypoint(accessToken: String, waypointId: String)
+    case deleteUserWaypoint(accessToken: String, waypointId: Int)
 
     var method: HTTPMethod {
         switch self {

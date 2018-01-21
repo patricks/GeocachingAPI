@@ -404,7 +404,7 @@ public class GeocachingAPI {
     /**
      Delete a user waypoint.
      */
-    public func deleteWaypoint(waypointId: String, completion: @escaping (_ successful: Bool, _ error: Error?) -> Void) {
+    public func deleteWaypoint(waypointId: Int, completion: @escaping (_ successful: Bool, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil)
             return
