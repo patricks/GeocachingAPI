@@ -41,6 +41,8 @@
 		CD98293B200FC8860049940C /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98291E200FC8850049940C /* APIRequest.swift */; };
 		CD98293C200FC8860049940C /* DotNetJSONTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982920200FC8850049940C /* DotNetJSONTransform.swift */; };
 		CD98293D200FC8860049940C /* IsoDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD982921200FC8850049940C /* IsoDateTransform.swift */; };
+		CDCDB5292014989E005560C3 /* GetUserWaypointsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDB5282014989D005560C3 /* GetUserWaypointsResponse.swift */; };
+		CDCDB52B20149D78005560C3 /* DeleteUserWaypointResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDB52A20149D78005560C3 /* DeleteUserWaypointResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		CD982920200FC8850049940C /* DotNetJSONTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotNetJSONTransform.swift; sourceTree = "<group>"; };
 		CD982921200FC8850049940C /* IsoDateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoDateTransform.swift; sourceTree = "<group>"; };
 		CD982922200FC8850049940C /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		CDCDB5282014989D005560C3 /* GetUserWaypointsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserWaypointsResponse.swift; sourceTree = "<group>"; };
+		CDCDB52A20149D78005560C3 /* DeleteUserWaypointResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserWaypointResponse.swift; sourceTree = "<group>"; };
 		D3064964140EAB963968B351 /* Pods_GeocachingAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeocachingAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +167,8 @@
 				CD982918200FC8850049940C /* SaveUserWaypointResponse.swift */,
 				CD982919200FC8850049940C /* GetGeocacheStatusResponse.swift */,
 				CD98291A200FC8850049940C /* GetGeocacheTypesResponse.swift */,
+				CDCDB5282014989D005560C3 /* GetUserWaypointsResponse.swift */,
+				CDCDB52A20149D78005560C3 /* DeleteUserWaypointResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -386,9 +392,11 @@
 				CD982937200FC8860049940C /* SaveUserWaypointResponse.swift in Sources */,
 				CD982935200FC8860049940C /* GetUserGalleryResponse.swift in Sources */,
 				CD98292B200FC8860049940C /* LimitsResponse.swift in Sources */,
+				CDCDB5292014989E005560C3 /* GetUserWaypointsResponse.swift in Sources */,
 				CD982923200FC8860049940C /* GeocachingAPI.swift in Sources */,
 				CD982934200FC8860049940C /* WaypointResponse.swift in Sources */,
 				CD982929200FC8860049940C /* GeocacheStatusResponse.swift in Sources */,
+				CDCDB52B20149D78005560C3 /* DeleteUserWaypointResponse.swift in Sources */,
 				CD982933200FC8860049940C /* GeocacheType.swift in Sources */,
 				CD982927200FC8860049940C /* GetUsersGeocacheLogsResponse.swift in Sources */,
 				CD98293D200FC8860049940C /* IsoDateTransform.swift in Sources */,

@@ -360,4 +360,67 @@ public class GeocachingAPI {
                 }
         }
     }
+
+    /**
+     Get user waypoints.
+    */
+    public func getUserWaypoints(cacheCode: String, completion: @escaping (_ successful: Bool, _ waypoints: [WaypointResponse]?, _ error: Error?) -> Void) {
+        guard let token = SettingsManager.apiToken else {
+            completion(false, nil, nil)
+            return
+        }
+
+        let request = APIRequest.getUserWaypoints(accessToken: token, cacheCode: cacheCode)
+
+        Alamofire.request(request)
+            .validate(apiStatusResponseHandler)
+            .responseObject { (response: DataResponse<GetUserWaypointsResponse>) in
+                switch response.result {
+                case .success(let value):
+                    completion(true, value.waypoints, nil)
+                case .failure(let error):
+                    completion(false, nil, error)
+                }
+        }
+    }
+
+    /**
+     Get corrected coordinates waypoint.
+     */
+    public func getCorrectedCoordinates(cacheCode: String, completion: @escaping (_ successful: Bool, _ waypoint: WaypointResponse?, _ error: Error?) -> Void) {
+        getUserWaypoints(cacheCode: cacheCode) { [weak self] (successful, waypoints, error) in
+            completion(successful, self?.correctedCoordinatesFromUserWaypoints(waypoints), error)
+        }
+    }
+
+    private func correctedCoordinatesFromUserWaypoints(_ waypoints: [WaypointResponse]?) -> WaypointResponse? {
+        guard let waypoints = waypoints else { return nil }
+
+        let correctedCoordinatesWaypoints = waypoints.filter { $0.isCorrectedCoordinate == true }
+
+        return correctedCoordinatesWaypoints.first
+    }
+
+    /**
+     Delete a user waypoint.
+     */
+    public func deleteWaypoint(waypointId: String, completion: @escaping (_ successful: Bool, _ error: Error?) -> Void) {
+        guard let token = SettingsManager.apiToken else {
+            completion(false, nil)
+            return
+        }
+
+        let request = APIRequest.deleteUserWaypoint(accessToken: token, waypointId: waypointId)
+
+        Alamofire.request(request)
+            .validate(apiStatusResponseHandler)
+            .responseObject { (response: DataResponse<DeleteUserWaypointResponse>) in
+                switch response.result {
+                case .success(_):
+                    completion(true, nil)
+                case .failure(let error):
+                    completion(false, error)
+                }
+        }
+    }
 }

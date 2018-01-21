@@ -9,7 +9,12 @@
 import Foundation
 
 public enum GeocachingErrorCode: Int {
+    case fail = 1
+    case notAuthorized = 2
     case authentication = 3
+    case geocacheCodeIsNotValid = 12
+    case invalidInputsStatus = 100
+    case correctedCoordinatesNotSupportedWithoutCacheId = 154
     case geocacheCanOnlyHaveSingleCorrectedCoordinate = 155
 }
 

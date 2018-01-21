@@ -35,8 +35,14 @@ enum APIRequest: URLRequestConvertible {
     // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/GetAPILimits
     case getApiLimits(accessToken: String)
 
+    // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/GetUserWaypoints
+    case getUserWaypoints(accessToken: String, cacheCode: String)
+
     // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/SaveUserWaypoint
     case saveUserWaypoint(accessToken: String, cacheCode: String, latitude: Double, longitude: Double, correctedCoordinate: Bool)
+
+    // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/DeleteUserWaypoint
+    case deleteUserWaypoint(accessToken: String, waypointId: String)
 
     var method: HTTPMethod {
         switch self {
@@ -49,7 +55,9 @@ enum APIRequest: URLRequestConvertible {
              .saveUserWaypoint(_):
             return .post
         case .getGeocacheTypes(_),
-             .getApiLimits(_):
+             .getApiLimits(_),
+             .getUserWaypoints(_),
+             .deleteUserWaypoint(_):
             return .get
         }
     }
@@ -81,6 +89,10 @@ enum APIRequest: URLRequestConvertible {
             apiPath = "GetAPILimits"
         case .saveUserWaypoint(_):
             apiPath = "SaveUserWaypoint"
+        case .getUserWaypoints(_):
+            apiPath = "GetUserWaypoints"
+        case .deleteUserWaypoint(_):
+            apiPath = "DeleteUserWaypoint"
         }
 
         urlComponents.path = APIConstants.apiBaseURLPath + apiPath
@@ -114,7 +126,9 @@ enum APIRequest: URLRequestConvertible {
                            "SouvenirData": true,
                            "TrackableData": true]
 
-            return ["AccessToken": accessToken, "UserID": userID, "ProfileOptions": options]
+            return ["AccessToken": accessToken,
+                    "UserID": userID,
+                    "ProfileOptions": options]
         case .getUsersGeocacheLogs(let accessToken, let username, let startIndex, let maxPerPage):
             let logTypes = LogTypeResponse.LogType.geocacheLogTypeIds +
                 LogTypeResponse.LogType.eventLogTypeIds
@@ -142,6 +156,12 @@ enum APIRequest: URLRequestConvertible {
                     "Latitude": latitude,
                     "Longitude": longitude,
                     "IsCorrectedCoordinate": correctedCoordinate]
+        case .getUserWaypoints(let accessToken, let cacheCode):
+            return ["AccessToken": accessToken,
+                    "CacheCode": cacheCode]
+        case .deleteUserWaypoint(let accessToken, let waypointId):
+            return ["AccessToken": accessToken,
+                    "WaypointID": waypointId]
         }
     }
 
