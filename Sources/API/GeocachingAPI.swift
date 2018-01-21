@@ -21,7 +21,7 @@ public class GeocachingAPI {
 
     public func apiStatusResponseHandler(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Request.ValidationResult {
         if response.statusCode != 200 {
-            return .failure(APIError.statusCodeError)
+            return .failure(APIError.statusCode)
         }
 
         if let data = data {
@@ -30,12 +30,14 @@ public class GeocachingAPI {
             if let rootDictionary = jsonWithObjectRoot as? [String: Any] {
                 if let statusDictionary = rootDictionary["Status"] as? [String: Any] {
                     if let statusCode = statusDictionary["StatusCode"] as? Int, statusCode != 0 {
-                        if statusCode == GeocachingErrorCode.authenticationError.rawValue {
+                        if statusCode == GeocachingErrorCode.authentication.rawValue {
                             // Logging out, because it looks like, that the api token expired
                             self.logout()
-                            return .failure(APIError.geocachingAuthenticationError)
+                            return .failure(APIError.geocachingAuthentication)
+                        } else if statusCode == GeocachingErrorCode.geocacheCanOnlyHaveSingleCorrectedCoordinate.rawValue {
+                            return .failure(APIError.geocacheCanOnlyHaveSingleCorrectedCoordinate)
                         }
-                        return .failure(APIError.geocachingGeneralError)
+                        return .failure(APIError.geocachingGeneral)
                     }
                 }
             }
@@ -116,7 +118,7 @@ public class GeocachingAPI {
      */
     public func getYourUserProfile(_ completion: ((_ successful: Bool, _ geocacher: ProfileResponse?, _ error: Error?) -> Void)? = nil) {
         guard let token = SettingsManager.apiToken else {
-            completion?(false, nil, APIError.noTokenError)
+            completion?(false, nil, APIError.noToken)
             return
         }
 
@@ -150,7 +152,7 @@ public class GeocachingAPI {
     public func getUsersCacheCounts(usernames: [String],
                                     completion: @escaping (_ successful: Bool, _ cacheCounts: [UserCacheCountsResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
-            completion(false, nil, APIError.noTokenError)
+            completion(false, nil, APIError.noToken)
             return
         }
 
@@ -178,7 +180,7 @@ public class GeocachingAPI {
      */
     public func getAnotherUsersProfile(userID: Int, completion: @escaping (_ successful: Bool, _ geocacher: ProfileResponse?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
-            completion(false, nil, APIError.noTokenError)
+            completion(false, nil, APIError.noToken)
             return
         }
 
@@ -206,7 +208,7 @@ public class GeocachingAPI {
                                      maxPerPage: Int = 30,
                                      completion: @escaping (_ successful: Bool, _ geocacheLogs: [GeocacheLogResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
-            completion(false, nil, APIError.noTokenError)
+            completion(false, nil, APIError.noToken)
             return
         }
 
@@ -237,7 +239,7 @@ public class GeocachingAPI {
                                maxPerPage: Int = 30,
                                completion: @escaping (_ successful: Bool, _ images: [ImageResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
-            completion(false, nil, APIError.noTokenError)
+            completion(false, nil, APIError.noToken)
             return
         }
 
