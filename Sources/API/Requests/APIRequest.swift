@@ -44,6 +44,9 @@ enum APIRequest: URLRequestConvertible {
     // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/DeleteUserWaypoint
     case deleteUserWaypoint(accessToken: String, waypointId: Int)
 
+    // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/GetMembershipTypes
+    case getMembershipTypes(accessToken: String)
+
     var method: HTTPMethod {
         switch self {
         case .getUsersCacheCounts(_),
@@ -57,7 +60,8 @@ enum APIRequest: URLRequestConvertible {
         case .getGeocacheTypes(_),
              .getApiLimits(_),
              .getUserWaypoints(_),
-             .deleteUserWaypoint(_):
+             .deleteUserWaypoint(_),
+             .getMembershipTypes(_):
             return .get
         }
     }
@@ -93,6 +97,8 @@ enum APIRequest: URLRequestConvertible {
             apiPath = "GetUserWaypoints"
         case .deleteUserWaypoint(_):
             apiPath = "DeleteUserWaypoint"
+        case .getMembershipTypes(_):
+            apiPath = "GetMembershipTypes"
         }
 
         urlComponents.path = APIConstants.apiBaseURLPath + apiPath
@@ -162,6 +168,8 @@ enum APIRequest: URLRequestConvertible {
         case .deleteUserWaypoint(let accessToken, let waypointId):
             return ["AccessToken": accessToken,
                     "WaypointID": waypointId]
+        case .getMembershipTypes(let accessToken):
+            return ["AccessToken": accessToken]
         }
     }
 

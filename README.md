@@ -27,7 +27,7 @@ A Swift framework for the Geocaching API.
 | GetGeocacheStatus | X |
 | GetGeocacheTypes | X |
 | GetImagesForGeocache | |
-| GetMembershipTypes | |
+| GetMembershipTypes | X |
 | GetMoreGeocaches | |
 | GetOwnedTrackables | |
 | GetPocketQueryData | |

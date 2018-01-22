@@ -426,4 +426,27 @@ public class GeocachingAPI {
                 }
         }
     }
+
+    /**
+     Get membership types.
+     */
+    public func getMembershipTypes(completion: @escaping (_ successful: Bool, _ membershipTypes: [MembershipResponse]?, _ error: Error?) -> Void) {
+        guard let token = SettingsManager.apiToken else {
+            completion(false, nil, nil)
+            return
+        }
+
+        let request = APIRequest.getMembershipTypes(accessToken: token)
+
+        Alamofire.request(request)
+            .validate(apiStatusResponseHandler)
+            .responseObject { (response: DataResponse<GetMembershipTypesResponse>) in
+                switch response.result {
+                case .success(let value):
+                    completion(true, value.memberships, nil)
+                case .failure(let error):
+                    completion(false, nil, error)
+                }
+        }
+    }
 }
