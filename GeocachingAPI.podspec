@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "GeocachingAPI"
-  s.version = "0.0.7"
+  s.version = "0.0.8"
   s.summary = "Geocaching API for Swift."
   s.homepage = "https://github.com/patricks/GeocachingAPI"
   s.description = "A Swift framework for the Geocaching API."

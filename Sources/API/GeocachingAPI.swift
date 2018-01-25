@@ -499,7 +499,7 @@ public class GeocachingAPI {
     /**
      Get bookmark list by guid.
      */
-    public func getBookmarkListByGuid(bookmarkListGuid: String, completion: @escaping (_ successful: Bool, _ bookmarkList: BookmarkListResponse?, _ error: Error?) -> Void) {
+    public func getBookmarkListByGuid(bookmarkListGuid: String, completion: @escaping (_ successful: Bool, _ bookmarkLists: [BookmarkListResponse]?, _ error: Error?) -> Void) {
         guard let token = SettingsManager.apiToken else {
             completion(false, nil, nil)
             return
@@ -512,7 +512,7 @@ public class GeocachingAPI {
             .responseObject { (response: DataResponse<GetBookmarkListByGuidResponse>) in
                 switch response.result {
                 case .success(let value):
-                    completion(true, value.bookmarkList, nil)
+                    completion(true, value.bookmarkLists, nil)
                 case .failure(let error):
                     completion(false, nil, error)
                 }

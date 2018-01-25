@@ -11,12 +11,12 @@ import ObjectMapper
 
 class GetBookmarkListByGuidResponse: Mappable {
     var status: StatusResponse?
-    var bookmarkList: BookmarkListResponse?
+    var bookmarkLists: [BookmarkListResponse]?
 
     required init?(map: Map) { }
 
     func mapping(map: Map) {
         status <- map["Status"]
-        bookmarkList <- map["BookmarkList"]
+        bookmarkLists <- map["BookmarkList"]
     }
 }
