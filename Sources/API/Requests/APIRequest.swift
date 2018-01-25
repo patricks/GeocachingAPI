@@ -47,6 +47,15 @@ enum APIRequest: URLRequestConvertible {
     // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/GetMembershipTypes
     case getMembershipTypes(accessToken: String)
 
+    // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/GetBookmarkListsForUser
+    case getBookmarkListsForUser(accessToken: String)
+
+    // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/GetBookmarkListsByUserID
+    case getBookmarkListsByUserID(accessToken: String, userID: String)
+
+    // https://api.groundspeak.com/LiveV6/geocaching.svc/help/operations/GetBookmarkListByGuid
+    case getBookmarkListByGuid(accessToken: String, bookmarkListGuid: String)
+
     var method: HTTPMethod {
         switch self {
         case .getUsersCacheCounts(_),
@@ -55,13 +64,16 @@ enum APIRequest: URLRequestConvertible {
              .getUserGallery(_),
              .getUsersGeocacheLogs(_),
              .getGeocacheStatus(_),
-             .saveUserWaypoint(_):
+             .saveUserWaypoint(_),
+             .getBookmarkListByGuid(_):
             return .post
         case .getGeocacheTypes(_),
              .getApiLimits(_),
              .getUserWaypoints(_),
              .deleteUserWaypoint(_),
-             .getMembershipTypes(_):
+             .getMembershipTypes(_),
+             .getBookmarkListsForUser(_),
+             .getBookmarkListsByUserID(_):
             return .get
         }
     }
@@ -99,6 +111,12 @@ enum APIRequest: URLRequestConvertible {
             apiPath = "DeleteUserWaypoint"
         case .getMembershipTypes(_):
             apiPath = "GetMembershipTypes"
+        case .getBookmarkListsForUser(_):
+            apiPath = "GetBookmarkListsForUser"
+        case .getBookmarkListsByUserID(_):
+            apiPath = "GetBookmarkListsByUserID"
+        case .getBookmarkListByGuid(_):
+            apiPath = "GetBookmarkListByGuid"
         }
 
         urlComponents.path = APIConstants.apiBaseURLPath + apiPath
@@ -113,7 +131,8 @@ enum APIRequest: URLRequestConvertible {
     var parameters: Parameters {
         switch self {
         case .getUsersCacheCounts(let accessToken, let usernames):
-            return ["AccessToken": accessToken, "Usernames": usernames]
+            return ["AccessToken": accessToken,
+                    "Usernames": usernames]
         case .getYourUserProfile(let accessToken):
             let options = ["ChallengesData": false,
                            "FavoritePointsData": true,
@@ -146,7 +165,9 @@ enum APIRequest: URLRequestConvertible {
                     "StartIndex": startIndex,
                     "MaxPerPage": maxPerPage]
         case .getGeocacheTypes(let accessToken),
-             .getApiLimits(let accessToken):
+             .getApiLimits(let accessToken),
+             .getBookmarkListsForUser(let accessToken),
+             .getMembershipTypes(let accessToken):
             return ["AccessToken": accessToken]
         case .getUserGallery(let accessToken, let username, let startIndex, let maxPerPage):
             return ["AccessToken": accessToken,
@@ -168,8 +189,12 @@ enum APIRequest: URLRequestConvertible {
         case .deleteUserWaypoint(let accessToken, let waypointId):
             return ["AccessToken": accessToken,
                     "WaypointID": waypointId]
-        case .getMembershipTypes(let accessToken):
-            return ["AccessToken": accessToken]
+        case .getBookmarkListsByUserID(let accessToken, let userID):
+            return ["AccessToken": accessToken,
+                    "UserID": userID]
+        case .getBookmarkListByGuid(let accessToken, let bookmarkListGuid):
+            return ["AccessToken": accessToken,
+                    "BookmarkListGuid": bookmarkListGuid]
         }
     }
 

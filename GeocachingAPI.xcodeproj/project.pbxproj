@@ -45,6 +45,11 @@
 		CDA5820E20167CE4000FAFBD /* MembershipResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA5820D20167CE4000FAFBD /* MembershipResponse.swift */; };
 		CDCDB5292014989E005560C3 /* GetUserWaypointsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDB5282014989D005560C3 /* GetUserWaypointsResponse.swift */; };
 		CDCDB52B20149D78005560C3 /* DeleteUserWaypointResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDB52A20149D78005560C3 /* DeleteUserWaypointResponse.swift */; };
+		CDDBCDE2201A53EB0094BF08 /* GetBookmarkListsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDBCDE1201A53EB0094BF08 /* GetBookmarkListsResponse.swift */; };
+		CDDBCDE4201A54500094BF08 /* BookmarkListsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDBCDE3201A54500094BF08 /* BookmarkListsResponse.swift */; };
+		CDDBCDE6201A590D0094BF08 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CDDBCDE5201A590D0094BF08 /* README.md */; };
+		CDDBCDEA201A5B950094BF08 /* BookmarkListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDBCDE9201A5B950094BF08 /* BookmarkListResponse.swift */; };
+		CDDBCDEC201A5CAD0094BF08 /* GetBookmarkListByGuidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDBCDEB201A5CAD0094BF08 /* GetBookmarkListByGuidResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +94,11 @@
 		CDA5820D20167CE4000FAFBD /* MembershipResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipResponse.swift; sourceTree = "<group>"; };
 		CDCDB5282014989D005560C3 /* GetUserWaypointsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserWaypointsResponse.swift; sourceTree = "<group>"; };
 		CDCDB52A20149D78005560C3 /* DeleteUserWaypointResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserWaypointResponse.swift; sourceTree = "<group>"; };
+		CDDBCDE1201A53EB0094BF08 /* GetBookmarkListsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkListsResponse.swift; sourceTree = "<group>"; };
+		CDDBCDE3201A54500094BF08 /* BookmarkListsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListsResponse.swift; sourceTree = "<group>"; };
+		CDDBCDE5201A590D0094BF08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		CDDBCDE9201A5B950094BF08 /* BookmarkListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListResponse.swift; sourceTree = "<group>"; };
+		CDDBCDEB201A5CAD0094BF08 /* GetBookmarkListByGuidResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkListByGuidResponse.swift; sourceTree = "<group>"; };
 		D3064964140EAB963968B351 /* Pods_GeocachingAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeocachingAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,6 +150,7 @@
 				CD9828F6200FC8360049940C /* Assets.xcassets */,
 				CD9828F8200FC8360049940C /* LaunchScreen.storyboard */,
 				CD9828FB200FC8360049940C /* Info.plist */,
+				CDDBCDE5201A590D0094BF08 /* README.md */,
 			);
 			path = GeocachingAPI;
 			sourceTree = "<group>";
@@ -174,6 +185,8 @@
 				CDCDB5282014989D005560C3 /* GetUserWaypointsResponse.swift */,
 				CDCDB52A20149D78005560C3 /* DeleteUserWaypointResponse.swift */,
 				CDA5820B20167C9A000FAFBD /* GetMembershipTypesResponse.swift */,
+				CDDBCDE1201A53EB0094BF08 /* GetBookmarkListsResponse.swift */,
+				CDDBCDEB201A5CAD0094BF08 /* GetBookmarkListByGuidResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -195,6 +208,8 @@
 				CD982914200FC8850049940C /* GeocacheType.swift */,
 				CD982915200FC8850049940C /* WaypointResponse.swift */,
 				CDA5820D20167CE4000FAFBD /* MembershipResponse.swift */,
+				CDDBCDE3201A54500094BF08 /* BookmarkListsResponse.swift */,
+				CDDBCDE9201A5B950094BF08 /* BookmarkListResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,7 +279,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Patrick Steiner";
 				TargetAttributes = {
 					CD9828EB200FC8360049940C = {
@@ -298,6 +313,7 @@
 			files = (
 				CD9828FA200FC8360049940C /* LaunchScreen.storyboard in Resources */,
 				CD9828F7200FC8360049940C /* Assets.xcassets in Resources */,
+				CDDBCDE6201A590D0094BF08 /* README.md in Resources */,
 				CD9828F5200FC8360049940C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +421,7 @@
 				CD982929200FC8860049940C /* GeocacheStatusResponse.swift in Sources */,
 				CDCDB52B20149D78005560C3 /* DeleteUserWaypointResponse.swift in Sources */,
 				CDA5820C20167C9A000FAFBD /* GetMembershipTypesResponse.swift in Sources */,
+				CDDBCDEA201A5B950094BF08 /* BookmarkListResponse.swift in Sources */,
 				CD982933200FC8860049940C /* GeocacheType.swift in Sources */,
 				CD982927200FC8860049940C /* GetUsersGeocacheLogsResponse.swift in Sources */,
 				CD98293D200FC8860049940C /* IsoDateTransform.swift in Sources */,
@@ -412,9 +429,12 @@
 				CD98292E200FC8860049940C /* MaxPerPageResponse.swift in Sources */,
 				CD982938200FC8860049940C /* GetGeocacheStatusResponse.swift in Sources */,
 				CD98292C200FC8860049940C /* LogTypeResponse.swift in Sources */,
+				CDDBCDEC201A5CAD0094BF08 /* GetBookmarkListByGuidResponse.swift in Sources */,
 				CD982931200FC8860049940C /* StatusReponse.swift in Sources */,
 				CD98293C200FC8860049940C /* DotNetJSONTransform.swift in Sources */,
+				CDDBCDE4201A54500094BF08 /* BookmarkListsResponse.swift in Sources */,
 				CD3AC99E20108B9700E04D0A /* SettingsManager.swift in Sources */,
+				CDDBCDE2201A53EB0094BF08 /* GetBookmarkListsResponse.swift in Sources */,
 				CD98292F200FC8860049940C /* BaseLogResponse.swift in Sources */,
 				CD98293B200FC8860049940C /* APIRequest.swift in Sources */,
 				CD98293A200FC8860049940C /* APIError.swift in Sources */,
@@ -457,6 +477,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -464,6 +485,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -514,6 +536,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -521,6 +544,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -545,6 +569,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -555,6 +580,7 @@
 			baseConfigurationReference = C7CEA9C4F58B6F727C835926 /* Pods-GeocachingAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6X47Q5RERE;
 				INFOPLIST_FILE = GeocachingAPI/Info.plist;
@@ -571,6 +597,7 @@
 			baseConfigurationReference = 034D6B6C92651E7315561493 /* Pods-GeocachingAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6X47Q5RERE;
 				INFOPLIST_FILE = GeocachingAPI/Info.plist;

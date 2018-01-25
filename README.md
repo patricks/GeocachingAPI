@@ -15,9 +15,9 @@ A Swift framework for the Geocaching API.
 | GetAnotherUsersProfile | X |
 | GetAPILimits | X |
 | GetAttributeTypesData | |
-| GetBookmarkListByGuid | |
-| GetBookmarkListsByUserID | |
-| GetBookmarkListsForUser | |
+| GetBookmarkListByGuid | X |
+| GetBookmarkListsByUserID |  X |
+| GetBookmarkListsForUser | X  |
 | GetCacheByTileGuid | |
 | GetCacheIdsFavoritedByUser | |
 | GetCachesFavoritedByUser | |

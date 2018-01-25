@@ -449,4 +449,73 @@ public class GeocachingAPI {
                 }
         }
     }
+
+    /**
+     Get bookmark lists for current user.
+     */
+    public func getBookmarkListsForUser(completion: @escaping (_ successful: Bool, _ bookmarkLists: [BookmarkListsResponse]?, _ error: Error?) -> Void) {
+        guard let token = SettingsManager.apiToken else {
+            completion(false, nil, nil)
+            return
+        }
+
+        let request = APIRequest.getBookmarkListsForUser(accessToken: token)
+
+        Alamofire.request(request)
+            .validate(apiStatusResponseHandler)
+            .responseObject { (response: DataResponse<GetBookmarkListsResponse>) in
+                switch response.result {
+                case .success(let value):
+                    completion(true, value.bookmarkLists, nil)
+                case .failure(let error):
+                    completion(false, nil, error)
+                }
+        }
+    }
+
+    /**
+     Get bookmark lists by user id.
+     */
+    public func getBookmarkListsByUserID(userID: String, completion: @escaping (_ successful: Bool, _ bookmarkLists: [BookmarkListsResponse]?, _ error: Error?) -> Void) {
+        guard let token = SettingsManager.apiToken else {
+            completion(false, nil, nil)
+            return
+        }
+
+        let request = APIRequest.getBookmarkListsByUserID(accessToken: token, userID: userID)
+
+        Alamofire.request(request)
+            .validate(apiStatusResponseHandler)
+            .responseObject { (response: DataResponse<GetBookmarkListsResponse>) in
+                switch response.result {
+                case .success(let value):
+                    completion(true, value.bookmarkLists, nil)
+                case .failure(let error):
+                    completion(false, nil, error)
+                }
+        }
+    }
+
+    /**
+     Get bookmark list by guid.
+     */
+    public func getBookmarkListByGuid(bookmarkListGuid: String, completion: @escaping (_ successful: Bool, _ bookmarkList: BookmarkListResponse?, _ error: Error?) -> Void) {
+        guard let token = SettingsManager.apiToken else {
+            completion(false, nil, nil)
+            return
+        }
+
+        let request = APIRequest.getBookmarkListByGuid(accessToken: token, bookmarkListGuid: bookmarkListGuid)
+
+        Alamofire.request(request)
+            .validate(apiStatusResponseHandler)
+            .responseObject { (response: DataResponse<GetBookmarkListByGuidResponse>) in
+                switch response.result {
+                case .success(let value):
+                    completion(true, value.bookmarkList, nil)
+                case .failure(let error):
+                    completion(false, nil, error)
+                }
+        }
+    }
 }
