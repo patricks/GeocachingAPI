@@ -73,8 +73,8 @@ public class GeocachingAPI {
 
     public func signIn(_ viewController: UIViewController?, completion: @escaping (_ successful: Bool, _ error: Error?) -> Void) {
         guard let apiConsumerKey = SettingsManager.apiConsumerKey,
-              let apiConsumerSecrect = SettingsManager.apiConsumerSecret,
-              let urlScheme = SettingsManager.urlScheme else {
+            let apiConsumerSecrect = SettingsManager.apiConsumerSecret,
+            let urlScheme = SettingsManager.urlScheme else {
                 completion(false, nil)
                 return
         }
@@ -87,12 +87,22 @@ public class GeocachingAPI {
             accessTokenUrl: APIConstants.apiAccessTokenURL
         )
 
-        if let viewController = viewController {
-            oAuthSwiftManager!.authorizeURLHandler = SafariURLHandler(viewController: viewController, oauthSwift: oAuthSwiftManager!)
+        guard let oAuthSwiftManager = oAuthSwiftManager else {
+            completion(false, nil)
+            return
         }
 
-        oAuthSwiftManager!.authorize(withCallbackURL: URL(string: "\(urlScheme)://\(APIConstants.oAuthHost)/geocaching")!,
-                                     success: { (credential, _, _) in
+        if let viewController = viewController {
+            oAuthSwiftManager.authorizeURLHandler = SafariURLHandler(viewController: viewController, oauthSwift: oAuthSwiftManager)
+        }
+
+        guard let oAuthURL = URL(string: "\(urlScheme)://\(APIConstants.oAuthHost)/geocaching") else {
+            completion(false, nil)
+            return
+        }
+
+        oAuthSwiftManager.authorize(withCallbackURL: oAuthURL,
+                                    success: { (credential, response, parameters) in
                                         self.storeUser(apiToken: credential.oauthToken)
                                         completion(true, nil)
         }, failure: { error in
