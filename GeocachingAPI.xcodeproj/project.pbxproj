@@ -124,6 +124,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD625385202989DC00AD1BAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD6253822029890500AD1BAC /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
 		CD9828E3200FC8360049940C = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +153,7 @@
 		CD9828EE200FC8360049940C /* GeocachingAPI */ = {
 			isa = PBXGroup;
 			children = (
-				CD6253822029890500AD1BAC /* Localizable.strings */,
+				CD625385202989DC00AD1BAC /* Resources */,
 				CD982901200FC8850049940C /* API */,
 				CD9828EF200FC8360049940C /* AppDelegate.swift */,
 				CD9828F1200FC8360049940C /* ViewController.swift */,
