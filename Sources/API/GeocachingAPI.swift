@@ -19,7 +19,7 @@ public class GeocachingAPI {
 
     // MARK: Validation Handler
 
-    public func apiStatusResponseHandler(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Request.ValidationResult {
+    private func apiStatusResponseHandler(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> Request.ValidationResult {
         if response.statusCode != 200 {
             return .failure(APIError.statusCode)
         }
