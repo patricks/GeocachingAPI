@@ -13,11 +13,11 @@
 
 /*Cache type: Event*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.event" = "Event";
+"cache.type.event" = "Etkinlik";
 
 /*Cache type: Giga Event*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.gigaevent" = "Giga Event";
+"cache.type.gigaevent" = "Giga Etkinlik";
 
 /*Cache type: Groundspeak BlockParty*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
@@ -41,7 +41,7 @@
 
 /*Cache type: Lost and Found Event*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.lostandfoundevent" = "Lost & Found Event";
+"cache.type.lostandfoundevent" = "Lost&Found Etkinlik";
 
 /*Cache type: Maze*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
@@ -49,144 +49,144 @@
 
 /*Cache type: Mega Event*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.megaevent" = "Mega Event";
+"cache.type.megaevent" = "Mega Etkinlik";
 
 /*Cache type: Multi*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.multi" = "Multi";
+"cache.type.multi" = "Çoklu Cache";
 
 /*Cache type: Traditional*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.traditional" = "Traditional";
+"cache.type.traditional" = "Geleneksel Cache";
 
 /*Cache type: Unknown*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.unknown" = "Unbekannt";
+"cache.type.unknown" = "Bilinmiyor";
 
 /*Cache type: Virtual*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.virtual" = "Virtual";
+"cache.type.virtual" = "Sanal Cache";
 
 /*Cache type: Webcam*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.webcam" = "Webcam";
+"cache.type.webcam" = "Webcam Cache";
 
 /*Cache type: Wherigo*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.wherigo" = "Wherigo";
+"cache.type.wherigo" = "Wherigo Cache";
 
 /*Log type: Announcement*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.announcement" = "Ankündigung";
+"log.type.announcement" = "Duyuru";
 
 /*Log type: Archive*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.archive" = "Archivierung";
+"log.type.archive" = "Arşivlendi";
 
 /*Log type: Will Attended*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.attended" = "Teilnahme";
+"log.type.attended" = "Katıldım";
 
 /*Log type: Didn't find it*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.didntFindIt" = "Nicht gefunden";
+"log.type.didntFindIt" = "Bulamadım";
 
 /*Log type: Discovered It*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.discoveredIt" = "Entdeckt";
+"log.type.discoveredIt" = "Görüldü";
 
 /*Log type: Dropped Off*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.droppedOff" = "Hinterlassen";
+"log.type.droppedOff" = "Bırakıldı";
 
 /*Log type: Enable Listing*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.enableListing" = "Listing aktiviert";
+"log.type.enableListing" = "Açıldı";
 
 /*Log type: Found it*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.foundit" = "Gefunden";
+"log.type.foundit" = "Bulundu";
 
 /*Log type: Grab It (Not from a Cache)*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.grabIt" = "Geschnappt";
+"log.type.grabIt" = "Al";
 
 /*Log type: Mark Missing*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.markMissing" = "Vermisst";
+"log.type.markMissing" = "Kayıp Olarak İşaretle";
 
 /*Log type: Move To Collection*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.moveToCollection" = "In Sammlung verschieben";
+"log.type.moveToCollection" = "Kolesiyona Taşı";
 
 /*Log type: Move To Inventory*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.moveToInventory" = "Ins Inventar verschieben";
+"log.type.moveToInventory" = "Envantere Taşı";
 
 /*Log type: Needs Archived*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.needsArchived" = "Sollte archiviert werden";
+"log.type.needsArchived" = "Arşivlenmesi Gerekir";
 
 /*Log type: Needs Maintenance*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.needsMaintenance" = "Benötigt Wartung";
+"log.type.needsMaintenance" = "Bakım Gerekli";
 
 /*Log type: Owner Maintenance*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.ownerMaintenance" = "Besitzerwartung";
+"log.type.ownerMaintenance" = "Sahip Bakımı";
 
 /*Log type: Permanently Archived*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.permanentlyArchived" = "Archiviert";
+"log.type.permanentlyArchived" = "Kalıcı Olarak Arşivlendi";
 
 /*Log type: Post Reviewer Note*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.postReviewerNote" = "Reviewer Notiz";
+"log.type.postReviewerNote" = "Denetçi Notu";
 
 /*Log type: Publish Listing*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.publishListing" = "Listing freigeschalten";
+"log.type.publishListing" = "Listelemeyi Yayınla";
 
 /*Log type: Retract Listing*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.retractListing" = "Listing zurückgezogen";
+"log.type.retractListing" = "Listelemeyi Geri Çek";
 
 /*Log type: Retrieve It from a Cache*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.retrieveItFromaCache" = "Von einem Cache bekommen";
+"log.type.retrieveItFromaCache" = "Bir Geocache'den al";
 
 /*Log type: Submit for Review*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.submitForReview" = "In den Review gesendet";
+"log.type.submitForReview" = "Denetim için gönder";
 
 /*Log type: Temporarily Disable Listing*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.temporarilyDisableListing" = "Zwischenzeitig gesperrt";
+"log.type.temporarilyDisableListing" = "Geçici Olarak Devredışı";
 
 /*Log type: Transfer*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.transfer" = "Übertragen";
+"log.type.transfer" = "Transfer edildi";
 
 /*Log type: Unarchive*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.unarchive" = "Archivierung zurückgezogen";
+"log.type.unarchive" = "Arşivden Çıkartıldı";
 
 /*Log type: Update Coordinates*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.updateCoordinates" = "Koordinaten aktualisiert";
+"log.type.updateCoordinates" = "Koordinatlar Güncellendi";
 
 /*Log type: Visited*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.visited" = "Besucht";
+"log.type.visited" = "Ziyaret Edildi";
 
 /*Log type: Webcam Photo Taken*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.webcamPhotoTaken" = "Webcam Foto erstellt";
+"log.type.webcamPhotoTaken" = "Webcam Fotoğrafo Çekildi";
 
 /*Log type: Will Attend*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.willAttend" = "Werde teilnehmen";
+"log.type.willAttend" = "Katılacağım";
 
 /*Log type: Write note*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"log.type.writeNote" = "Notiz geschrieben";
+"log.type.writeNote" = "Not ekle";

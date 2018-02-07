@@ -56,7 +56,6 @@
 		034D6B6C92651E7315561493 /* Pods-GeocachingAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeocachingAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeocachingAPI/Pods-GeocachingAPI.release.xcconfig"; sourceTree = "<group>"; };
 		C7CEA9C4F58B6F727C835926 /* Pods-GeocachingAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeocachingAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeocachingAPI/Pods-GeocachingAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		CD6253832029890500AD1BAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CD6253842029896F00AD1BAC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CD9828EC200FC8360049940C /* GeocachingAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeocachingAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9828EF200FC8360049940C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD9828F1200FC8360049940C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -459,7 +458,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				CD6253832029890500AD1BAC /* en */,
-				CD6253842029896F00AD1BAC /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
