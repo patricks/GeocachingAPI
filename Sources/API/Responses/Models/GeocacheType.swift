@@ -38,45 +38,48 @@ public enum GeocacheType: Int {
     }
 
     public var localizedName: String {
+        let path = Bundle(for: LogTypeResponse.self).path(forResource: "GeocachingAPI", ofType: "bundle")!
+        let bundle = Bundle(path: path) ?? Bundle.main
+
         switch self {
         case .traditional:
-            return NSLocalizedString("cache.type.traditional", comment: "Cache type: Traditional")
+            return NSLocalizedString("cache.type.traditional", bundle: bundle, comment: "Cache type: Traditional")
         case .multi:
-            return NSLocalizedString("cache.type.multi", comment: "Cache type: Multi")
+            return NSLocalizedString("cache.type.multi", bundle: bundle, comment: "Cache type: Multi")
         case .virtual:
-            return NSLocalizedString("cache.type.virtual", comment: "Cache type: Virtual")
+            return NSLocalizedString("cache.type.virtual", bundle: bundle, comment: "Cache type: Virtual")
         case .letterboxHybrid:
-            return NSLocalizedString("cache.type.letterbox", comment: "Cache type: Letterbox")
+            return NSLocalizedString("cache.type.letterbox", bundle: bundle, comment: "Cache type: Letterbox")
         case .event:
-            return NSLocalizedString("cache.type.event", comment: "Cache type: Event")
+            return NSLocalizedString("cache.type.event", bundle: bundle, comment: "Cache type: Event")
         case .unknown:
-            return NSLocalizedString("cache.type.unknown", comment: "Cache type: Unknown")
+            return NSLocalizedString("cache.type.unknown", bundle: bundle, comment: "Cache type: Unknown")
         case .ape:
-            return NSLocalizedString("cache.type.ape", comment: "Cache type: Ape")
+            return NSLocalizedString("cache.type.ape", bundle: bundle, comment: "Cache type: Ape")
         case .webcam:
-            return NSLocalizedString("cache.type.webcam", comment: "Cache type: Webcam")
+            return NSLocalizedString("cache.type.webcam", bundle: bundle, comment: "Cache type: Webcam")
         case .locationless:
-            return NSLocalizedString("cache.type.locationless", comment: "Cache type: Locationless")
+            return NSLocalizedString("cache.type.locationless", bundle: bundle, comment: "Cache type: Locationless")
         case .cacheInTrashOutEvent:
-            return NSLocalizedString("cache.type.cito", comment: "Cache type: CITO")
+            return NSLocalizedString("cache.type.cito", bundle: bundle, comment: "Cache type: CITO")
         case .earthcache:
-            return NSLocalizedString("cache.type.earthcache", comment: "Cache type: Earthcache")
+            return NSLocalizedString("cache.type.earthcache", bundle: bundle, comment: "Cache type: Earthcache")
         case .megaEvent:
-            return NSLocalizedString("cache.type.megaevent", comment: "Cache type: Mega Event")
+            return NSLocalizedString("cache.type.megaevent", bundle: bundle, comment: "Cache type: Mega Event")
         case .gpsAdventuresExhibit:
-            return NSLocalizedString("cache.type.maze", comment: "Cache type: Maze")
+            return NSLocalizedString("cache.type.maze", bundle: bundle, comment: "Cache type: Maze")
         case .wherigo:
-            return NSLocalizedString("cache.type.wherigo", comment: "Cache type: Wherigo")
+            return NSLocalizedString("cache.type.wherigo", bundle: bundle, comment: "Cache type: Wherigo")
         case .lostAndFoundEvent:
-            return NSLocalizedString("cache.type.lostandfoundevent", comment: "Cache type: Lost and Found Event")
+            return NSLocalizedString("cache.type.lostandfoundevent", bundle: bundle, comment: "Cache type: Lost and Found Event")
         case .groundspeakHQ:
-            return NSLocalizedString("cache.type.groundspeakhq", comment: "Cache type: Groundspeak HQ")
+            return NSLocalizedString("cache.type.groundspeakhq", bundle: bundle, comment: "Cache type: Groundspeak HQ")
         case .groundspeakLostAndFoundCelebration:
-            return NSLocalizedString("cache.type.lostandfoundcelebration", comment: "Cache type: Lost and Found Celebration")
+            return NSLocalizedString("cache.type.lostandfoundcelebration", bundle: bundle, comment: "Cache type: Lost and Found Celebration")
         case .groundspeakBlockParty:
-            return NSLocalizedString("cache.type.groundspeakblockparty", comment: "Cache type: Groundspeak BlockParty")
+            return NSLocalizedString("cache.type.groundspeakblockparty", bundle: bundle, comment: "Cache type: Groundspeak BlockParty")
         case .gigaEvent:
-            return NSLocalizedString("cache.type.gigaevent", comment: "Cache type: Giga Event")
+            return NSLocalizedString("cache.type.gigaevent", bundle: bundle, comment: "Cache type: Giga Event")
         }
     }
 }
