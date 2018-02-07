@@ -61,3 +61,9 @@ A Swift framework for the Geocaching API.
 | UploadImageToGeocacheLog | |
 | UploadImageToTrackableLog | |
 | WindowsPhoneTileSearch | |
+
+## Translations
+
+* English
+* German
+* Turkish
