@@ -61,7 +61,7 @@
 
 /*Cache type: Unknown*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
-"cache.type.unknown" = "Bilinmiyor";
+"cache.type.unknown" = "Gizemli Cache";
 
 /*Cache type: Virtual*/
 /*GeocachingAPI/en.lproj/Localizable.strings*/
